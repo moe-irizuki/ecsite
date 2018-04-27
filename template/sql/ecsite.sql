@@ -1,5 +1,5 @@
 set names utf8;
-set fooreign_key_checks = 0;
+set foreign_key_checks = 0;
 drop database if exists ecsite;
 
 create database if not exists ecsite;
