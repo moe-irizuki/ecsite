@@ -1,0 +1,29 @@
+package com.internousdev.template.action;
+
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemAction extends ActionSupport implements SessionAware {
+
+	private int stock;
+	private String pay;
+	public Map<String, Object> session;
+	private String result;
+
+	public String execute(){
+		result = SUCCESS;
+
+		session.put("stock", stock);
+		int intStock = Integer.parseInt(session.get("stork").toString());
+		int intPrice = Integer.parseInt(session.get("buyItem_price").toString());
+		session.putAll("buyItem_price",intStock * intPrice);
+		String payment;
+
+		if(pay.equals("1")){
+			payment = "現金払い";
+			session.put("pay", payment);
+		}else{
+	}
+
+}

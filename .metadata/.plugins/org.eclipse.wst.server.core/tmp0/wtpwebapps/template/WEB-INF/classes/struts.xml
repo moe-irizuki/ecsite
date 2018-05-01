@@ -2,7 +2,7 @@
 
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-"http://struts.apache.org\dtds/struts-2.3.dtd">
+"http://struts.apache.org/dtds/struts-2.3.dtd">
 <!-- Strutsの詳細設定 -->
 
 <struts>
@@ -17,6 +17,18 @@
 		<action name="LoginAction" class="com.internousdev.template.action.LoginAction" method="execute">
 		<result name="success">buyItem.jsp</result>
 		<result name="error">home.jsp</result>
+		</action>
+
+		<action name="UserCreateAction" class="com.internousdev.template.action.UserCreateAction" method="execute">
+		<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction" class="com.internousdev.template.action.UserCreateConfirmAction" method="execute">
+		<result name="success">userCreateConfirm.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction" class="com.internousdev.template.action.UserCreateCompleteAction" method="execute">
+		<result name="success">userCreateComplete.jsp</result>
 		</action>
 
 	</package>
