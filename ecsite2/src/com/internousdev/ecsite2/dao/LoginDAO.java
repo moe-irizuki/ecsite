@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.internousdev.ecsite2.dto.LoginDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
 public class LoginDAO {
