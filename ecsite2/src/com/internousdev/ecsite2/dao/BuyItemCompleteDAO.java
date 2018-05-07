@@ -5,8 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.internousdev.ecsite2.util.DBConnector;
-
-import freemarker.template.utility.DateUtil;
+import com.internousdev.ecsite2.util.DateUtil;
 
 public class BuyItemCompleteDAO {
 	private DBConnector dbConnector = new DBConnector();

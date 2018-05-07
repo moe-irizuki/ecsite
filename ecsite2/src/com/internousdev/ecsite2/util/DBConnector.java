@@ -10,7 +10,7 @@ public class DBConnector {
 	private static String user = "root";
 	private static String password = "mysql";
 
-	public Connection getConection(){
+	public Connection getConnection(){
 		Connection con = null;
 
 		try{
