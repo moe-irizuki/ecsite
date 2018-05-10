@@ -1,0 +1,61 @@
+/* ========TAG LAYOUT======== */
+	body{
+		margin:0;
+		padding:0;
+		line-height:1.6;
+		letter-spacing:1px;
+		font-family:'Mv Bol','Bodoni 72 Smallcaps',筑紫A丸ゴシック,'MS ゴシック',Helvetica,sans-serif;
+		font-size:12px;
+		color:#333;
+		background-image: url(../image/gabriel-matula-301987-unsplash_result.jpg);
+		background-size: cover;
+	}
+	table{
+		text-align:center;
+		margin:0 auto;
+	}
+/* ========ID LAYOUT======== */
+	#contents{
+		width:80%;
+		height:90%;
+		margin:50px auto;
+		background-color:rgba(255,255,255,0.8);
+	}
+	#header{
+		width:100%;
+		height:50px;
+		background-color:#DCDCDC;
+	}
+	#header p{
+		float:left;
+		margin:30px 2em 0px 0px;
+		padding-left:2em;
+	}
+	#left{
+		float:left;
+		width:65%;
+		height:90%;
+	}
+	#right{
+		float:right;
+		width:35%;
+		height:90%;
+	}
+	#top{
+		width:70%;
+		margin:30px auto;
+		border:1px solid rgba(128,128,128,0.8);
+	}
+	#main{
+		width:100%;
+		height:560px;
+		text-align:center;
+		ba
+	}
+	#footer{
+		width:100%;
+		height:50px;
+		background-color:#DCDCDC;
+		clear:both;
+		position:absolute;
+	}

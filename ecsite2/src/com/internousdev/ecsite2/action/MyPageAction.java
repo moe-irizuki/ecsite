@@ -2,7 +2,6 @@ package com.internousdev.ecsite2.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,7 +14,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> session;
 	private MyPageDAO myPageDAO = new MyPageDAO();
-	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 	private String deleteFlg;
 	private String message;
 
@@ -27,13 +26,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		if(deleteFlg == null) {
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
-
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
-
-			Iterator<MyPageDTO> iterator = myPageList.iterator();
-			if(!(iterator.hasNext())) {
-				myPageList = null;
-			}
 		}else if(deleteFlg.equals("1")) {
 			delete();
 		}
@@ -55,15 +48,15 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		}
 	}
 
-	public String getDeleteFlg() {
-		return deleteFlg;
-	}
 	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
 	}
 	@Override
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
+	}
+	public ArrayList<MyPageDTO> getMyPageList(){
+		return this.myPageList;
 	}
 	public String getMessage() {
 		return message;
