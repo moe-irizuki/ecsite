@@ -3,7 +3,7 @@ package com.internousdev.ecsite2.dto;
 public class BuyItemDTO {
 	public int id;
 	public String itemName;
-	public int itemPrice;
+	public String itemPrice;
 	public int count;
 	public int total_price;
 	public String pay;
@@ -24,10 +24,10 @@ public class BuyItemDTO {
 		this.itemName = itemName;
 	}
 
-	public int getItemPrice(){
+	public String getItemPrice(){
 		return itemPrice;
 	}
-	public void setItemPrice(int itemPrice){
+	public void setItemPrice(String itemPrice){
 		this.itemPrice = itemPrice;
 	}
 
