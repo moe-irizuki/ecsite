@@ -26,6 +26,17 @@
 			<div id="top">
 				<p>MyPage</p>
 			</div>
+
+			<s:form>
+				<tr>
+					<td>
+						USER NAME：
+					</td>
+					<td>
+						<s:property value="session.userName" />
+					</td>
+				</tr>
+			</s:form>
 			<div>
 			<s:if test="myPageList == null">
 				<h3>ご購入情報はありません。</h3>
