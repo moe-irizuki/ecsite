@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BuyItemAction extends ActionSupport implements SessionAware {
 
 
-	private ArrayList<BuyItemDTO> buyItemDTOList = new ArrayList<BuyItemDTO>();
+	private ArrayList<BuyItemDTO> buyItemDTOList = new ArrayList<>();
 
 
 	//アイテム購入個数
@@ -57,8 +57,9 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 			int buyItemId=list.get(i).getId();
 			session.put("id",buyItemId);
+//			int buyItemId = Integer.parseInt(count.get(i));
 
-			int item_stock=list.get(i).getItem_stock();
+			int item_stock = list.get(i).getItem_stock();
 
 			int intCount = Integer.parseInt(count.get(i));
 			int intPrice = Integer.parseInt(list.get(i).getItemPrice());
@@ -70,7 +71,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 			if(intCount != 0){
 
-			buyItemDTO.setId((int)session.get("id").toString());
+			buyItemDTO.setId(Integer.parseInt(session.get("id").toString()));
 			buyItemDTO.setItemName(session.get("itemName").toString());
 			buyItemDTO.setItemPrice(session.get("itemPrice").toString());
 			buyItemDTO.setCount(intCount);

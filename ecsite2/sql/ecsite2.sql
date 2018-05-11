@@ -40,6 +40,6 @@ create table user_buy_item_transaction(
 	delete_date datetime
 );
 
-INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("ノートBook",100,50),("Body Cream",500,50);
+INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("RIP CREAM",100,50),("BODY CREAM",500,50),("HAIR OIL",1000,50);
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name) VALUES("internous","internous01","test");

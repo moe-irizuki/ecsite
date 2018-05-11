@@ -2,28 +2,44 @@ package com.internousdev.ecsite2.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.ecsite2.dao.MyPageDAO;
+import com.internousdev.ecsite2.dto.BuyItemDTO;
 import com.internousdev.ecsite2.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware{
-
+	//ログイン情報を格納
 	public Map<String,Object> session;
-	private MyPageDAO myPageDAO = new MyPageDAO();
+
+//	private MyPageDAO myPageDAO = new MyPageDAO();
+
+	//マイページ情報格納DTO
 	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	//削除フラグ
 	private String deleteFlg;
 	private String message;
+	private List<BuyItemDTO> buyItemDTOList;
+
+	/**
+	 * 商品購入履歴取得メソッド
+	 */
 
 	public String execute() throws SQLException{
+		@SuppressWarnings("unchecked")
+		List<BuyItemDTO> buyItemDTOList = (List<BuyItemDTO>) session.get("list");
 		if(!session.containsKey("id")) {
 			return ERROR;
 		}
 
+		//商品購入履歴を削除しない場合
 		if(deleteFlg == null) {
+			if(buyItemDTOList != null) {
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
