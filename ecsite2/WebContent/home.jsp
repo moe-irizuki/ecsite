@@ -13,11 +13,11 @@
 <body>
 	<div id="header">
 		<div id="pr">
-			<p>Login</p>
-			<p>My Page</p>
-			<p>cart</p>
-			<p>Product List</p>
-			<p>Inquiry</p>
+			<p>LOGIN</p>
+			<p>MY PAGE</p>
+			<p>CART</p>
+			<p>PPRODUCT LIST</p>
+			<p>INQUIRY</p>
 		</div>
 	</div>
 	<div id="main">

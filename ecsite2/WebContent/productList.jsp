@@ -37,6 +37,9 @@
 								<td>
 									<span>値段</span>
 								</td>
+								<td>
+									<s:property value="itemPrice" /><span>円</span>
+								</td>
 							</tr>
 							<tr>
 								<td>

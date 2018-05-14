@@ -81,11 +81,11 @@
 				</div>
 			</div>
 		</div>
+		<br>
 	</div>
-	</body>
 	<div id ="footer">
 		<div id="pr">
 		</div>
 	</div>
-
+	</body>
 </html>
