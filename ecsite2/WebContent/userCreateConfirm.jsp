@@ -18,7 +18,7 @@
 			<p>LOGIN</p>
 			<p>MY PAGE</p>
 			<p>CART</p>
-			<p>PPRODUCT LIST</p>
+			<p>PRODUCT LIST</p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
@@ -64,6 +64,7 @@
 					</s:form>
 				</table>
 			</div>
+			<br><br>
 		</div>
 	</div>
 	<div id="footer">

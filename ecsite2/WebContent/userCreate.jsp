@@ -16,7 +16,7 @@
 			<p>LOGIN</p>
 			<p>MY PAGE</p>
 			<p>CART</p>
-			<p>PPRODUCT LIST</p>
+			<p>PRODUCT LIST</p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
@@ -63,6 +63,8 @@
 					<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
 				</div>
 			</div>
+			<br>
+			<br>
 		</div>
 	</div>
 	<div id="footer">

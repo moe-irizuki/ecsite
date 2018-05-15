@@ -45,6 +45,8 @@
 						<a href='<s:url action="UserCreateAction" />'>こちら</a></p>
 					<p>HOMEへ戻る場合は
 						<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+						<br>
+						<br>
 				</div>
 			</div>
 		</div>

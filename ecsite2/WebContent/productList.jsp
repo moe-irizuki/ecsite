@@ -35,6 +35,11 @@
 							</tr>
 							<tr>
 								<td>
+									<img src="<s:property value="image" />">
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<span>値段</span>
 								</td>
 								<td>
@@ -82,6 +87,15 @@
 								</td>
 							</tr>
 						</s:iterator>
+					<tr>
+						<td>
+							<span>支払い方法</span>
+						</td>
+						<td>
+							<input type="radio" name="pay" value="1" checked="checked">現金払い
+							<input type="radio" name="pay" value="2">クレジットカード
+						</td>
+					</tr>
 						<tr>
 							<td>
 								<s:submit value="購入" />
@@ -103,7 +117,7 @@
 			<div id="contents">
 				<br><br>
 				<div>
-				<s:form action="ItemSeartchAction">
+				<s:form action="ItemSearchAction">
 					<tr>
 						<td>
 							<s:textfield name="searchWord" value="" />

@@ -18,7 +18,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
 	//マイページ情報格納DTO
-	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 
 	//削除フラグ
 	private String deleteFlg;
@@ -41,6 +41,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 			if(buyItemDTOList != null) {
 			for(int i=0; i<buyItemDTOList.size(); i++){
+
 			String user_master_id = session.get("login_user_id").toString();
 			MyPageDAO myPageDAO = new MyPageDAO();
 			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);

@@ -16,7 +16,7 @@
 			<p>LOGIN</p>
 			<p>MY PAGE</p>
 			<p>CART</p>
-			<p>PPRODUCT LIST</p>
+			<p>PRODUCT LIST</p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
@@ -30,9 +30,13 @@
 			<s:form action="HomeAction">
 				<s:submit value="商品購入" />
 			</s:form>
+			<br>
+			<br>
 			<s:if test="#session.id != null">
 				<p>ログアウトする場合は
 					<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+					<br>
+					<br>
 			</s:if>
 		</div>
 	</div>
