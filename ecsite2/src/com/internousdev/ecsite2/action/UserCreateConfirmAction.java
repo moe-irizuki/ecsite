@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite2.dao.UserCreateConfirmDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
@@ -11,6 +12,10 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private String loginUserId;
 	private String loginPassword;
 	private String userName;
+	private String userAddress;
+	private String userGender;
+	private String userTell;
+	private String userMail;
 	public Map<String,Object> session;
 	private String errorMessage;
 
@@ -19,35 +24,90 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		if(!(loginUserId.equals(""))
 				&& !(loginPassword.equals(""))
-				&& !(userName.equals(""))){
-			session.put("loginUserId", loginUserId);
-			session.put("loginPassword", loginPassword);
-			session.put("userName", userName);
+				&& !(userName.equals(""))
+				&& !(userAddress.equals(""))
+				&& !(userTell.equals(""))
+				&& !(userMail.equals(""))){
+
+			UserCreateConfirmDAO userCreateConfirmDAO = new UserCreateConfirmDAO();
+			boolean checkId = userCreateConfirmDAO.getUserInfo(loginUserId, loginPassword);
+
+			if(checkId){
+				session.put("loginUserId", loginUserId);
+				session.put("loginPassword", loginPassword);
+				session.put("userName", userName);
+				session.put("userAddress", userAddress);
+				session.put("userGender", userGender);
+				session.put("userTell", userTell);
+				session.put("userMail", userMail);
+
+			}else{
+
+				setErrorMessage("同じID、もしくはPASSが存在します。");
+				result = ERROR;
+			}
 		}else{
 			setErrorMessage("未入力の項目があります。");
-			result = ERROR;
 		}
-		return result;
+			return result;
 	}
 
 	public String getLoginUserId(){
 		return loginUserId;
 	}
+
 	public void setLoginUserId(String loginUserId){
 		this.loginUserId = loginUserId;
 	}
+
 	public String getLoginPassword(){
 		return loginPassword;
 	}
+
 	public void setLoginPassword(String loginPassword){
 		this.loginPassword = loginPassword;
 	}
+
 	public String getUserName(){
 		return userName;
 	}
+
 	public void setUserName(String userName){
 		this.userName = userName;
 	}
+
+	public String getUserAddress(){
+		return userAddress;
+	}
+
+	public void setUserAddress(String userAddress){
+		this.userAddress = userAddress;
+	}
+
+	public String getUserGender(){
+		return userGender;
+	}
+
+	public void setUserGender(String userGender){
+		this.userGender = userGender;
+	}
+
+	public String getUserTell(){
+		return userTell;
+	}
+
+	public void setUserTell(String userTell){
+		this.userTell = userTell;
+	}
+
+	public String getUserMail(){
+		return userMail;
+	}
+
+	public void setUserMail(String userMail){
+		this.userMail = userMail;
+	}
+
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session = session;

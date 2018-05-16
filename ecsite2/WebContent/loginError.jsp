@@ -27,7 +27,8 @@
 				<p>LOGIN</p>
 			</div>
 			<div>
-				<h3>商品を購入する際にはログインをお願いします。</h3>
+				<p class="error-message">ログインに失敗しました。</p>
+				<p>ID・PASSをご確認の上、再度ご入力ください。</p>
 			</div>
 
 				<s:form action="LoginAction">

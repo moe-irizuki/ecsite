@@ -22,7 +22,7 @@
 		<action name="LoginAction" class="com.internousdev.ecsite2.action.LoginAction" method="execute">
 			<result name="master">administration.jsp</result>
 			<result name="success">productList.jsp</result>
-			<result name="error">login.jsp</result>
+			<result name="error">loginError.jsp</result>
 		</action>
 
 		<!-- UserCreateAction -->
