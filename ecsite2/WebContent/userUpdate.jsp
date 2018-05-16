@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<!-- ヘッダー -->
-
 	<div id="header">
 		<div id="pr">
 			<p>LOGIN</p>
@@ -23,8 +21,6 @@
 			<p>INQUIRY</p>
 		</div>
 	</div>
-
-<!-- メイン -->
 
 	<div id="main">
 		<div id="contents">
@@ -71,7 +67,7 @@
 					<td><input type="text" name="userTell" value="<s:property value='session.userTell' />" /></td>
 				</tr>
 				<tr>
-					<td><label>Mail:</label></td>
+					<td><label>MAIL ADDRESS:</label></td>
 					<td><input type="text" name="userMail" value="<s:property value='session.userMail' />" /></td>
 				</tr>
 				<tr>
@@ -89,8 +85,6 @@
 			<br>
 		</div>
 	</div>
-
-<!-- フッター -->
 
 	<div id="footer">
 	</div>

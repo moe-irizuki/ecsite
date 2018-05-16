@@ -11,7 +11,7 @@ public class LoginDTO {
 	private String userMail;
 	private String userNumber;
 	private boolean loginFlg = false;
-//	private boolean loginMaster = false;
+	private boolean loginMaster = false;
 
 	public String getLoginId() {
 		return loginId;
@@ -85,12 +85,12 @@ public class LoginDTO {
 		this.loginFlg = loginFlg;
 	}
 
-//	public boolean getLoginMaster(){
-//		return loginMaster;
-//	}
-//
-//	public void setLoginMaster(boolean loginMaster){
-//		this.loginMaster = loginMaster;
-//	}
+	public boolean getLoginMaster(){
+		return loginMaster;
+	}
+
+	public void setLoginMaster(boolean loginMaster){
+		this.loginMaster = loginMaster;
+	}
 
 }

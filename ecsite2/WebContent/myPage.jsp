@@ -25,7 +25,6 @@
 <!-- メイン -->
 	<div id="main">
 		<div id="contents">
-			<br>
 			<div id="top">
 				<p>MY PAGE</p>
 			</div>
@@ -77,8 +76,6 @@
 						<p>ユーザー情報を変更する場合は<a href='<s:url action="GoUserUpdateAction" />'>こちら</a></p>
 						<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 						<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
-						<br>
-						<br>
 					</div>
 			</div>
 		</div>

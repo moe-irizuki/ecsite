@@ -11,15 +11,17 @@
 </head>
 
 <body>
+
 	<div id="header">
 		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
+			<p><a href='<s:url action="LoginAction" />'>LOGIN</a></p>
+			<p><a href='<s:url action="MyPageAction" />'>MY PAGE</a></p>
 			<p>CART</p>
-			<p>PRODUCT LIST</p>
+			<p><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
+
 	<div id="main">
 		<div id="contents">
 		<br>
@@ -41,6 +43,7 @@
 		</div>
 	</div>
 	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>

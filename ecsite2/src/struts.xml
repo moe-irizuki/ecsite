@@ -20,6 +20,7 @@
 
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.ecsite2.action.LoginAction" method="execute">
+			<result name="master">administration.jsp</result>
 			<result name="success">productList.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
@@ -39,6 +40,13 @@
 		<!-- UserCreateCompleteAction -->
 		<action name="UserCreateCompleteAction" class="com.internousdev.ecsite2.action.UserCreateCompleteAction" method="execute">
 			<result name="success">userCreateComplete.jsp</result>
+		</action>
+
+		<!-- ProductListPageAction -->
+		<action name="ProductListPageAction" class="com.internousdev.ecsite2.action.ProductListPageAction" method="execute">
+			<result name="success">productList.jsp</result>
+			<result name="master">productList.jsp</result>
+			<result name="error">login.jsp</result>
 		</action>
 
 		<!-- BuyItemAction -->
