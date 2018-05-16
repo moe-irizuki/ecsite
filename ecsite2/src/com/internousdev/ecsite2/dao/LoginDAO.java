@@ -8,6 +8,7 @@ import com.internousdev.ecsite2.dto.LoginDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
 public class LoginDAO {
+
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 	private LoginDTO loginDTO = new LoginDTO();
@@ -20,6 +21,7 @@ public class LoginDAO {
 	 * @return LoginDTO
 	 */
 	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword){
+
 		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
 		try{
@@ -33,9 +35,20 @@ public class LoginDAO {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
+				loginDTO.setUserAddress(resultSet.getString("user_address"));
+				loginDTO.setUserGender(resultSet.getString("user_gender"));
+				loginDTO.setUserTell(resultSet.getString("user_tell"));
+				loginDTO.setUserMail(resultSet.getString("user_mail"));
+				loginDTO.setUserNumber(resultSet.getString("id"));
+
 
 				if(!(resultSet.getString("login_id").equals(null))){
 					loginDTO.setLoginFlg(true);
+				}
+
+				if(resultSet.getString("login_id").equals("internous")
+						&&resultSet.getString("login_pass").equals("internous01")){
+					loginDTO.setLoginMaster(true);
 				}
 			}
 		}catch(Exception e){

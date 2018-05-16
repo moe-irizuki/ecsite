@@ -3,6 +3,7 @@ package com.internousdev.ecsite2.dto;
 public class BuyItemDTO {
 	public int id;
 	public String itemName;
+	public String image;
 	public String itemPrice;
 	public int count;
 	public int total_price;
@@ -22,6 +23,13 @@ public class BuyItemDTO {
 	}
 	public void setItemName(String itemName){
 		this.itemName = itemName;
+	}
+
+	public String getImage(){
+		return image;
+	}
+	public void setImage(String image){
+		this.image = image;
 	}
 
 	public String getItemPrice(){

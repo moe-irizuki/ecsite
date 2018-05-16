@@ -4,17 +4,13 @@
 		padding:0px;
 		line-height:1.6;
 		letter-spacing:1px;
-		font-family:'Mv Bol','Bodoni 72 Smallcaps','筑紫A丸ゴシック','MS ゴシック',Helvetica,sans-serif;
+		font-family:'Mv Bol','Bodoni 72 Smallcaps','�}��A�ۃS�V�b�N','MS �S�V�b�N',Helvetica,sans-serif;
 		font-size:12px;
 		color:#333;
-		background-image: url(../image/ec1.jpg);
-/* 		画像を常に天地左右の中央に配置 */
+		background-image: url(../images/ec1.jpg);
 		background-position: center center;
-/* 		画像をタイル状に繰り返し表示しない */
 		background-repeat: no-repeat;
-/* 		コンテンツの高さが画像の高さより大きい時、動かないように固定 */
 		background-attachment: fixed;
-/* 		表示するコンテナの大きさに基づいて、背景画像を調整 */
 		background-size: cover;
 	}
 	table{
@@ -26,7 +22,13 @@
 		width:80%;
 		height:auto;
 		margin:50px auto;
+		padding:10px 5px 20px 5px;
 		background-color:rgba(255,255,255,0.7);
+	}
+	#contents img{
+		width:150px;
+		height:auto;
+/* 		text-align:center; */
 	}
 	#header{
 		width:100%;
@@ -38,14 +40,17 @@
 		margin:30px 2em 0px 0px;
 		padding-left:2em;
 	}
+	#header a{
+		text-decoration:none;
+	}
 	#left{
 		float:left;
-		width:65%;
+		width:70%;
 /* 		height:90%; */
 	}
 	#right{
 		float:right;
-		width:35%;
+		width:30%;
 /* 		height:90%; */
 	}
 	#top{

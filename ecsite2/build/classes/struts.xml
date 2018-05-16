@@ -20,6 +20,7 @@
 
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.ecsite2.action.LoginAction" method="execute">
+			<result name="master">administration.jsp</result>
 			<result name="success">productList.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
@@ -41,6 +42,13 @@
 			<result name="success">userCreateComplete.jsp</result>
 		</action>
 
+		<!-- ProductListPageAction -->
+		<action name="ProductListPageAction" class="com.internousdev.ecsite2.action.ProductListPageAction" method="execute">
+			<result name="success">productList.jsp</result>
+			<result name="master">productList.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction" class="com.internousdev.ecsite2.action.BuyItemAction" method="execute">
 			<result name="success">buyItemConfirm.jsp</result>
@@ -58,15 +66,39 @@
 			<result name="success">home.jsp</result>
 		</action>
 
+		<!-- ItemSearchAction -->
+		<action name="ItemSearchAction" class="com.internousdev.ecsite2.action.ItemSearchAction" method="execute">
+			<result name="success">productList.jsp</result>
+			<result name="error">productList.jsp</result>
+		</action>
+
 		<!-- MyPageAction -->
 		<action name="MyPageAction" class="com.internousdev.ecsite2.action.MyPageAction" method="execute">
 			<result name="success">myPage.jsp</result>
 			<result name="error">error.jsp</result>
 		</action>
 
+		<!-- GoUserUpdateAction -->
+		<action name="GoUserUpdateAction" class="com.internousdev.ecsite2.action.GoUserUpdateAction" method="execute">
+			<result name="success">userUpdate.jsp</result>
+		</action>
+
+		<!-- UserUpdateAction -->
+		<action name="UserUpdateAction" class="com.internousdev.ecsite2.action.UserUpdateAction" method="execute">
+			<result name="success">userUpdate.jsp</result>
+			<result name="error">userUpdate.jsp</result>
+		</action>
+
+		<!-- UserUpdateConfirmAction -->
+		<action name="UserUpdateConfirmAction" class="com.internousdev.ecsite2.action.UserUpdateConfirmAction" method="execute">
+			<result name="success">userUpdateComplete.jsp</result>
+			<result name="error">userUpdate.jsp</result>
+		</action>
+
 		<!-- LogoutAction -->
 		<action name="LogoutAction" class="com.internousdev.ecsite2.action.LogoutAction" method="execute">
 			<result name="success">home.jsp</result>
 		</action>
+
 	</package>
 </struts>

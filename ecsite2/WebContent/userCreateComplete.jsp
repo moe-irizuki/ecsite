@@ -16,20 +16,25 @@
 			<p>LOGIN</p>
 			<p>MY PAGE</p>
 			<p>CART</p>
-			<p>PPRODUCT LIST</p>
+			<p>PRODUCT LIST</p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
 	<div id="main">
-		<div id="top">
-			<p>UserCreateComplete</p>
-		</div>
-		<div><br>
-			<h3>ユーザーの登録が完了致しました。</h3>
-
-			<div>
-				<a href='<s:url action="HomeAction" />'>ログインへ</a>
+		<div id="contents">
+		<br>
+			<div id="top">
+				<p>UserCreateComplete</p>
 			</div>
+			<div>
+				<h3>ユーザーの登録が完了致しました。</h3>
+
+				<div>
+					<a href='<s:url action="HomeAction" />'>ログインへ</a>
+				</div>
+			</div>
+			<br>
+			<br>
 		</div>
 	</div>
 	<div id="footer">

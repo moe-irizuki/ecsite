@@ -28,6 +28,14 @@
 			</div>
 			<div>
 				<h3>商品を購入する際にはログインをお願いします。</h3>
+			</div>
+
+			<div>
+				<s:if test="LoginUserInfo == null">
+					<p>下記項目を入力してください。</p>
+				</s:if>
+			</div>
+
 				<s:form action="LoginAction">
 					<tr>
 						<td>LOGIN ID：</td>
@@ -45,6 +53,8 @@
 						<a href='<s:url action="UserCreateAction" />'>こちら</a></p>
 					<p>HOMEへ戻る場合は
 						<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+						<br>
+						<br>
 				</div>
 			</div>
 		</div>

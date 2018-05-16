@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
@@ -11,15 +11,17 @@
 </head>
 
 <body>
+
 	<div id="header">
 		<div id="pr">
 			<p>LOGIN</p>
 			<p>MY PAGE</p>
 			<p>CART</p>
-			<p>PPRODUCT LIST</p>
+			<p>PRODUCT LIST</p>
 			<p>INQUIRY</p>
 		</div>
 	</div>
+
 	<div id="main">
 		<div id="contents">
 			<br>
@@ -63,8 +65,11 @@
 					<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
 				</div>
 			</div>
+			<br>
+			<br>
 		</div>
 	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>
