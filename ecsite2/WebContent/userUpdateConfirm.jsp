@@ -69,8 +69,7 @@
 						<td><br></td>
 					</tr>
 					<tr>
-						<td><input type="button" class="button" value="戻る" onclick="submitAction('GoUserUpdateAction')" /></td>
-						<td><input type="button" class="button" value="完了" onclick="submitAction('UserUpdateConfirmAction')" /></td>
+						<td><s:submit value="完了" escape="false" /></td>
 					</tr>
 
 				</s:form>

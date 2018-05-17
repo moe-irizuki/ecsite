@@ -39,8 +39,8 @@ public class UserUpdateAction extends ActionSupport implements SessionAware{
 		boolean idCheck = false;
 
 		if(!(loginUserId.length() == 0) && !(loginPassword.length() == 0)
-				&&!(userName.length() == 0) &&!(userAddress.length() == 0)
-				&&!(userTell.length() == 0) &&(userMail.length() == 0)){
+				&& !(userName.length() == 0) && !(userAddress.length() == 0)
+				&& !(userTell.length() == 0) && !(userMail.length() == 0)){
 
 			String defaultLoginId = ((LoginDTO) session.get("loginUser")).getLoginId();
 

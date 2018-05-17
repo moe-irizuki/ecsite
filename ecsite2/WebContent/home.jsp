@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,7 @@
 			<p><a href='<s:url action="MyPageAction" />'>MY PAGE</a></p>
 			<p>CART</p>
 			<p><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></p>
-			<p>INQUIRY</p>
+			<p><a href='<s:url action="InquiryAction" />'>INQUIRY</a></p>
 		</div>
 	</div>
 

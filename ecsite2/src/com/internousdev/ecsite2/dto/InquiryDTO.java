@@ -1,0 +1,45 @@
+package com.internousdev.ecsite2.dto;
+
+public class InquiryDTO {
+
+	private String inquiry_name;
+
+	private String inquiry_mail;
+
+	private String qtype;
+
+	private String body;
+
+
+	public String getInquiry_name(){
+		return inquiry_name;
+	}
+
+	public void setInquiry_name(String inquiry_name){
+		this.inquiry_name = inquiry_name;
+	}
+
+	public String getInquiry_mail(){
+		return inquiry_mail;
+	}
+
+	public void setInquiry_mail(String inquiry_mail){
+		this.inquiry_mail = inquiry_mail;
+	}
+
+	public String getQtype(){
+		return qtype;
+	}
+	public void setQtype(String qtype){
+		this.qtype = qtype;
+	}
+
+	public String getBody(){
+		return body;
+	}
+
+	public void setBody(String body){
+		this.body = body;
+	}
+
+}

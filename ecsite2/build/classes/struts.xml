@@ -85,7 +85,7 @@
 
 		<!-- UserUpdateAction -->
 		<action name="UserUpdateAction" class="com.internousdev.ecsite2.action.UserUpdateAction" method="execute">
-			<result name="success">userUpdate.jsp</result>
+			<result name="success">userUpdateConfirm.jsp</result>
 			<result name="error">userUpdate.jsp</result>
 		</action>
 
@@ -93,6 +93,11 @@
 		<action name="UserUpdateConfirmAction" class="com.internousdev.ecsite2.action.UserUpdateConfirmAction" method="execute">
 			<result name="success">userUpdateComplete.jsp</result>
 			<result name="error">userUpdate.jsp</result>
+		</action>
+
+		<!-- InquiryAction -->
+		<action name="InquryAction" class="com.internousdev.ecsite2.action.InquiryAction" method="execute">
+			<result name="success">inquiry.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->

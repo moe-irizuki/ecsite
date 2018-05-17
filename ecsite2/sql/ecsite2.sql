@@ -19,7 +19,7 @@ create table login_user_transaction(
 	user_tell varchar(13),
 	user_mail varchar(50),
 	insert_date datetime,
-	updated_date datetime
+	update_date datetime
 );
 
 /* 商品情報テーブル */
@@ -57,6 +57,6 @@ INSERT INTO item_info_transaction(item_name,image,item_price,item_stock) VALUES
 ("HAIR OIL","./images/hairoil.jpg",1000,50),
 ("PERFUME","./images/perfume.jpg",700,30);
 
-INSERT INTO login_user_transaction(login_id,login_pass,user_name) VALUES
-("internous","internous01","master"),
-("taro","123","taro123");
+INSERT INTO login_user_transaction(login_id,login_pass,user_name,user_address,user_gender,user_tell,user_mail) VALUES
+("internous","internous01","master","tokyo","man","09000000000","master@gmail"),
+("taro","123","taro123","tokyo","man","09012345678","taro@gmail");

@@ -19,7 +19,7 @@ public class UserUpdateDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "UPDATE login_user_transaction SET login_id=?, login_pass=?, user_address=?, user_gender=?, user_tell=?, user_mail=?, update_date=? WHERE id=?";
+	private String sql = "UPDATE login_user_transaction SET login_id=?, login_pass=?, user_name=?, user_address=?, user_gender=?, user_tell=?, user_mail=?, update_date=? WHERE id=?";
 
 	public boolean userUpdateInfo(String login_id, String login_pass, String user_name, String user_address, String user_gender, String user_tell, String user_mail, String defaultLoginId) throws SQLException{
 

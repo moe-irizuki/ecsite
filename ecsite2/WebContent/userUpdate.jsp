@@ -45,7 +45,7 @@
 				</tr>
 				<tr>
 					<td><label>LOGIN PASS:</label></td>
-					<td><input type="password" name="loginpassword" value="<s:property value='session.loginPassword' />" /></td>
+					<td><input type="password" name="loginPassword" value="<s:property value='session.loginPassword' />" /></td>
 				</tr>
 				<tr>
 					<td><label>USER NAME:</label></td>
@@ -54,8 +54,8 @@
 				<tr>
 					<td><label>GENDER:</label></td>
 					<td>
-						<input type="radio" name="userGender" value="男">Gentle man
-						<input type="radio" name="userGender" value="女">Lady
+						<input type="radio" name="userGender" value="Man">Man
+						<input type="radio" name="userGender" value="Lady">Lady
 					</td>
 				</tr>
 				<tr>
