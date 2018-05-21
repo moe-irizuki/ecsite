@@ -29,8 +29,8 @@
 			</div>
 			<div>
 				<p><a href='<s:url action="" />'>在庫管理</a></p>
-				<p><a href='<s:url action="" />'>商品追加</a></p>
-				<p><a href='<s:url action="" />'>商品削除</a></p>
+				<p><a href='<s:url action="GoItemInsertAction" />'>商品追加</a></p>
+				<p><a href='<s:url action="GoItemDeleteAction" />'>商品削除</a></p>
 				<p><a href='<s:url action="GoInquiryListAction" />'>問い合わせ一覧</a></p>
 				<br>
 				<br>

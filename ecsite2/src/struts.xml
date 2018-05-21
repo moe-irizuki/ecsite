@@ -122,6 +122,27 @@
 			<result name="success">inquiryList.jsp</result>
 		</action>
 
+		<!-- GoItemInsertAction -->
+		<action name="GoItemInsertAction" class="com.internousdev.ecsite2.action.GoItemInsertAction" method="execute">
+			<result name="success">itemInsert.jsp</result>
+		</action>
+
+		<!-- ItemInsertAction -->
+		<action name="ItemInsertAction" class="com.internousdev.ecsite2.action.ItemInsertAction" method="execute">
+			<result name="success">itemInsertComplete.jsp</result>
+			<result name="error">itemInsert.jsp</result>
+		</action>
+
+		<!-- GoItemDeleteAction -->
+		<action name="GoItemDeleteAction" class="com.internousdev.ecsite2.action.GoItemDeleteAction" method="execute">
+			<result name="success">itemDelete.jsp</result>
+		</action>
+
+		<!-- ItemDeleteAction -->
+		<action name="ItemDeleteActon" class="com.internousdev.ecsite2.action.ItemDeleteAction" method="execute">
+			<result name="success">itemDeleteConfirm.jsp</result>
+		</action>
+
 		<!-- LogoutAction -->
 		<action name="LogoutAction" class="com.internousdev.ecsite2.action.LogoutAction" method="execute">
 			<result name="success">home.jsp</result>
