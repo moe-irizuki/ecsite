@@ -51,6 +51,18 @@ create table user_buy_item_transaction(
 	delete_date datetime
 );
 
+/* 問い合わせテーブル */
+
+drop table if exists inquiry_transaction;
+
+create table inquiry_transaction(
+	inquiry_name varchar(50),
+	inquiry_mail varchar(50),
+	qtype varchar(50),
+	body varchar(225),
+	master_id varchar(50)
+	);
+
 INSERT INTO item_info_transaction(item_name,image,item_price,item_stock) VALUES
 ("RIP CREAM","./images/ripcream1.jpg",100,50),
 ("BODY CREAM","./images/bodycream.jpg",500,50),

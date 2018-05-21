@@ -27,7 +27,7 @@
 				<p>LOGIN</p>
 			</div>
 			<div>
-				<h3>商品を購入する際にはログインをお願いします。</h3>
+				<h3>ID・PASSを入力してログインしてください。</h3>
 			</div>
 
 				<s:form action="LoginAction">

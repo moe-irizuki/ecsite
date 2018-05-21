@@ -9,15 +9,17 @@
 <title>商品一覧画面</title>
 </head>
 <body>
+
 	<div id="header">
 		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
+			<p><a href='<s:url action="LoginAction" />'>LOGIN</a></p>
+			<p><a href='<s:url action="MyPageAction" />'>MY PAGE</a></p>
 			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
+			<p><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></p>
+			<p><a href='<s:url action="InquiryAction" />'>INQUIRY</a></p>
 		</div>
 	</div>
+
 	<div id="main">
 		<div id="left">
 			<div id="contents">
@@ -104,13 +106,6 @@
 					</table>
 				</s:form>
 
-				<div>
-					<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-					<p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
-					<br>
-					<br>
-				</div>
-
 			</div>
 		</div>
 		<div id="right">
@@ -131,6 +126,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div id="footer">
 	</div>
 </body>

@@ -25,6 +25,23 @@
 			<result name="error">loginError.jsp</result>
 		</action>
 
+		<!-- InquiryAction -->
+		<action name="InquiryAction" class="com.internousdev.ecsite2.action.InquiryAction" method="execute">
+			<result name="success">inquiry.jsp</result>
+		</action>
+
+		<!-- InquiryConfirmAction -->
+		<action name="InquiryConfirmAction" class="com.internousdev.ecsite2.action.InquiryConfirmAction" method="execute">
+			<result name="success">inquiryConfirm.jsp</result>
+			<result name="error">inquiry.jsp</result>
+		</action>
+
+		<!-- InquiryCompleteAction -->
+		<action name="InquiryCompleteAction" class="com.internousdev.ecsite2.action.InquiryCompleteAction" method="execute">
+			<result name="success">inquiryComplete.jsp</result>
+			<result name="error">inquiryConfirm.jsp</result>
+		</action>
+
 		<!-- UserCreateAction -->
 		<action name="UserCreateAction" class="com.internousdev.ecsite2.action.UserCreateAction" method="execute">
 			<result name="success">userCreate.jsp</result>
@@ -95,9 +112,14 @@
 			<result name="error">userUpdate.jsp</result>
 		</action>
 
-		<!-- InquiryAction -->
-		<action name="InquryAction" class="com.internousdev.ecsite2.action.InquiryAction" method="execute">
-			<result name="success">inquiry.jsp</result>
+		<!-- GoAdministrationPageAction -->
+		<action name="GoAdministrationPageAction" class="com.internousdev.ecsite2.action.GoAdministrationPageAction" method="execute">
+			<result name="success">administration.jsp</result>
+		</action>
+
+		<!-- GoInquiryListAction -->
+		<action name="GoInquiryListAction" class="com.internousdev.ecsite2.action.GoInquiryListAction" method="execute">
+			<result name="success">inquiryList.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->

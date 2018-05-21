@@ -11,18 +11,17 @@
 </head>
 
 <body>
-<!-- ヘッダー -->
+
 	<div id="header">
 		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
+			<p><a href='<s:url action="LoginAction" />'>LOGIN</a></p>
+			<p><a href='<s:url action="MyPageAction" />'>MY PAGE</a></p>
 			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
+			<p><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></p>
+			<p><a href='<s:url action="InquiryAction" />'>INQUIRY</a></p>
 		</div>
 	</div>
 
-<!-- メイン -->
 	<div id="main">
 		<div id="contents">
 			<div id="top">
@@ -80,7 +79,7 @@
 			</div>
 		</div>
 	</div>
-<!-- フッター -->
+
 	<div id="footer">
 		<div id="pr">
 		</div>

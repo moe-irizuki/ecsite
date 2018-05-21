@@ -10,6 +10,8 @@ public class InquiryDTO {
 
 	private String body;
 
+	private String master_id;
+
 
 	public String getInquiry_name(){
 		return inquiry_name;
@@ -40,6 +42,14 @@ public class InquiryDTO {
 
 	public void setBody(String body){
 		this.body = body;
+	}
+
+	public String getMaster_id(){
+		return master_id;
+	}
+
+	public void setMaster_id(String master_id){
+		this.master_id = master_id;
 	}
 
 }

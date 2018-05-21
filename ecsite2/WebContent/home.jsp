@@ -29,7 +29,7 @@
 		</div>
 		<div id="text-center">
 			<s:form action="HomeAction">
-				<s:submit value="商品購入" />
+				<s:submit value="LOGIN" />
 			</s:form>
 			<br>
 			<br>
