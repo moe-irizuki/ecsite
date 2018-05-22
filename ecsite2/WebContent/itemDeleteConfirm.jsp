@@ -7,12 +7,14 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-<script type="text/javascript">
-	function submitAction(url) {
-		$('form').attr('action', url);
-		$('form').submit();
-	}
-</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function submitAction(url) {
+			$('form').attr('action', url);
+			$('form').submit();
+		}
+	</script>
 
 
 <title>ItemDeleteConfirm画面</title>
@@ -45,11 +47,11 @@
 
 				<dl>
 				<s:iterator value="itemDeleteList">
-					<img src="<s:property value='image' />"><br>
-					<s:property value="itemName" /><br>
-					<span>値段:<s:property value="itemPrice" />円</span><br>
-					<span>現在の在庫:<s:property value="item_stock" />個</span><br>
-					<input class="check-box" type="checkbox" name="deleteName" value="<s:property value='itemName' />">
+<%-- 					<img src="<s:property value='image' />"><br> --%>
+					商品名：<s:property value="itemName" /><br>
+<%-- 					<span>値段:<s:property value="itemPrice" />円</span><br> --%>
+<%-- 					<span>現在の在庫:<s:property value="item_stock" />個</span><br> --%>
+<%-- 					<input class="check-box" type="checkbox" name="deleteName" value="<s:property value='itemName' />"> --%>
 				</s:iterator>
 				</dl>
 

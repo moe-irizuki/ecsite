@@ -6,7 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<title>ItemDelete画面</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	function submitAction(url) {
+		$('form').attr('action', url);
+		$('form').submit();
+	}
+	</script>
+
+<title>ItemInventoryConfirm画面</title>
 </head>
 
 <body>
@@ -25,35 +34,26 @@
 		<div id="contents">
 			<br>
 			<div id="top">
-				<p>ITEM DELETE PAGE</p>
+				<p>ITEM INVENTORY CONFIRM PAGE</p>
 			</div>
-			<div>
-
-			<p>削除したい商品を選択してください。</p>
 
 			<div>
-			<s:form action="ItemDeleteAction">
+			<s:form>
 			<s:iterator value="buyItemDTOList">
-
-				<dl>
-					<img src="<s:property value='image' />"><br>
-					<s:property value="itemName" /><br>
-					<span>値段:</span>
-					<s:property value="itemPrice" /><span>円</span><br>
-					<span>現在の在庫:</span>
-					<s:property value="item_stock" />個</span><br>
-					<input class="check-box" type="checkbox" name="deleteName" value="<s:property value='itemName' />">
-				</dl>
+			<s:if test="count != 0">
+				<img src="<s:property value='image' />">
+				<p><s:property value="=itemName" /><p>
+				<p>値段：<s:property value="itemPrice" />円</p>
+				<p>現在の在庫：<s:property value="item_stock" />個</p>
+				<p>追加個数<s:property value="count" />個</p>
+			</s:if>
 			</s:iterator>
-
-			<tr>
-				<td><s:submit class="button" value="商品を削除する" /></td>
-			</tr>
-
+			<div>
+				<input type="button" class="button" value="在庫数の変更" onclick="submitAction('ItemInventoryControlAction')" />
+			</div>
 			</s:form>
 			</div>
 
-			</div>
 			<div>
 				<p>管理者ページに戻る場合は<a href='<s:url action="GoAdministrationPageAction" />'>こちら</a><p>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a><p>

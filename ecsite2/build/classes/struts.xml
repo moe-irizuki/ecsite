@@ -117,10 +117,15 @@
 			<result name="success">administration.jsp</result>
 		</action>
 
-		<!-- GoInquiryListAction -->
-		<action name="GoInquiryListAction" class="com.internousdev.ecsite2.action.GoInquiryListAction" method="execute">
-			<result name="success">inquiryList.jsp</result>
+		<!-- GoItemInventoryControlAction -->
+		<action name="GoItemInventoryControlAction" class="com.internousdev.ecsite2.action.GoItemInventoryControlAction" method="execute">
+			<result name="success">itemInventoryControl.jsp</result>
 		</action>
+
+		<!-- ItemInventoryControlAction -->
+<!-- 		<action name="ItemInventoryControlAction" class="com.internousdev.ecsite2.action.ItemInventoryAction" method="execute"> -->
+<!-- 			<result name="success">itemInventoryConfirm.jsp</result> -->
+<!-- 		</action> -->
 
 		<!-- GoItemInsertAction -->
 		<action name="GoItemInsertAction" class="com.internousdev.ecsite2.action.GoItemInsertAction" method="execute">
@@ -139,8 +144,18 @@
 		</action>
 
 		<!-- ItemDeleteAction -->
-		<action name="ItemDeleteActon" class="com.internousdev.ecsite2.action.ItemDeleteAction" method="execute">
+		<action name="ItemDeleteAction" class="com.internousdev.ecsite2.action.ItemDeleteAction" method="execute">
 			<result name="success">itemDeleteConfirm.jsp</result>
+		</action>
+
+		<!-- ItemDeleteConfirmAction -->
+		<action name="ItemDeleteConfirmAction" class="com.internousdev.ecsite2.action.ItemDeleteConfirmAction" method="execute">
+			<result name="success">itemDeleteComplete.jsp</result>
+		</action>
+
+		<!-- GoInquiryListAction -->
+		<action name="GoInquiryListAction" class="com.internousdev.ecsite2.action.GoInquiryListAction" method="execute">
+			<result name="success">inquiryList.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->
