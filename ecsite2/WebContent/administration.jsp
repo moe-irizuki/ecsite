@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<title>管理画面</title>
+<title>Administration画面</title>
 </head>
 
 <body>
