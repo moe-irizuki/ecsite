@@ -13,7 +13,7 @@
 		$('form').attr('action', url);
 		$('form').submit();
 	}
-	</script>
+</script>
 
 <title>ItemInventoryConfirm画面</title>
 </head>

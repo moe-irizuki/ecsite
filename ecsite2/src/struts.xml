@@ -123,9 +123,9 @@
 		</action>
 
 		<!-- ItemInventoryControlAction -->
-<!-- 		<action name="ItemInventoryControlAction" class="com.internousdev.ecsite2.action.ItemInventoryAction" method="execute"> -->
-<!-- 			<result name="success">itemInventoryConfirm.jsp</result> -->
-<!-- 		</action> -->
+		<action name="ItemInventoryControlAction" class="com.internousdev.ecsite2.action.ItemInventoryAction" method="execute">
+			<result name="success">itemInventoryConfirm.jsp</result>
+		</action>
 
 		<!-- GoItemInsertAction -->
 		<action name="GoItemInsertAction" class="com.internousdev.ecsite2.action.GoItemInsertAction" method="execute">
