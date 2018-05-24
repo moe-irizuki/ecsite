@@ -12,19 +12,7 @@
 </head>
 <body>
 
-<!-- ヘッダー -->
-
-	<div id="header">
-		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
-			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
-		</div>
-	</div>
-
-<!-- メイン -->
+	<jsp:include page="includeHeader.jsp" />
 
 	<div id="main">
 		<div id="contents">
@@ -34,15 +22,13 @@
 			</div>
 			<div>
 				<p>登録情報を変更しました。</p>
-				
+
 				<br><br>
-				
-				
+
+
 			</div>
 		</div>
 	</div>
-
-<!-- フッター -->
 
 	<div id="footer">
 	</div>

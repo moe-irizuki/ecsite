@@ -22,7 +22,7 @@ public class ItemInventoryConfirmAction extends ActionSupport implements Session
 
 	public String execute() throws SQLException{
 
-		//ItemInvedtoryControlActionで定義した"list"から値を取得
+		//ItemInventoryControlActionで定義した"list"から値を取得
 		@SuppressWarnings("unchecked")
 		List<BuyItemDTO> list = (ArrayList<BuyItemDTO>) session.get("list");
 

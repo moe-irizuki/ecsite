@@ -10,15 +10,9 @@
 </head>
 
 <body>
-	<div id="header">
-		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
-			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
-		</div>
-	</div>
+
+	<jsp:include page="includeHeader.jsp" />
+
 	<div id="main">
 		<div id="contents">
 			<br>

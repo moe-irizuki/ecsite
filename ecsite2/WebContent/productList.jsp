@@ -10,15 +10,7 @@
 </head>
 <body>
 
-	<div id="header">
-		<div id="pr">
-			<p><a href='<s:url action="LoginAction" />'>LOGIN</a></p>
-			<p><a href='<s:url action="MyPageAction" />'>MY PAGE</a></p>
-			<p>CART</p>
-			<p><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></p>
-			<p><a href='<s:url action="InquiryAction" />'>INQUIRY</a></p>
-		</div>
-	</div>
+	<jsp:include page="includeHeader.jsp" />
 
 	<div id="main">
 		<div id="left">

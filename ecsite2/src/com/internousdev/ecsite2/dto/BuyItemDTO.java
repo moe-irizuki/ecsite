@@ -1,15 +1,26 @@
 package com.internousdev.ecsite2.dto;
 
 public class BuyItemDTO {
-	public int id;
-	public String itemName;
-	public String image;
-	public String itemPrice;
-	public int count;
-	public int total_price;
-	public String pay;
-	public int item_stock;
-	public int total_count;
+
+	//商品情報を保管する変数
+
+	private int id;
+
+	private String itemName;
+
+	private String itemPrice;
+
+	private int total_price;
+
+	private int count;
+
+	private int total_count;
+
+	private String pay;
+
+	private int item_stock;
+
+	private String image;
 
 	public int getId(){
 		return id;
@@ -25,18 +36,18 @@ public class BuyItemDTO {
 		this.itemName = itemName;
 	}
 
-	public String getImage(){
-		return image;
-	}
-	public void setImage(String image){
-		this.image = image;
-	}
-
 	public String getItemPrice(){
 		return itemPrice;
 	}
 	public void setItemPrice(String itemPrice){
 		this.itemPrice = itemPrice;
+	}
+
+	public int getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(int total_price) {
+		this.total_price = total_price;
 	}
 
 	public int getCount() {
@@ -46,11 +57,11 @@ public class BuyItemDTO {
 		this.count = count;
 	}
 
-	public int getTotal_price() {
-		return total_price;
+	public int getTotal_count() {
+		return total_count;
 	}
-	public void setTotal_price(int total_price) {
-		this.total_price = total_price;
+	public void setTotal_count(int total_count) {
+		this.total_count = total_count;
 	}
 
 	public String getPay() {
@@ -67,12 +78,13 @@ public class BuyItemDTO {
 		this.item_stock = item_stock;
 	}
 
-	public int getTotal_count() {
-		return total_count;
+	public String getImage(){
+		return image;
 	}
-	public void setTotal_count(int total_count) {
-		this.total_count = total_count;
+	public void setImage(String image){
+		this.image = image;
 	}
+
 
 
 }

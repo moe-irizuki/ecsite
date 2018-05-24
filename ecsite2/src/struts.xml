@@ -25,6 +25,17 @@
 			<result name="error">loginError.jsp</result>
 		</action>
 
+		<!-- CartAction -->
+		<action name="CartAction" class="com.internousdev.ecsite2.action.CartAction" method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<!-- CartInsertAction -->
+<!-- 		<actin name="CartInsertAction" class="com.internousdev.ecsite2.action.CartInsertAction" method="execute"> -->
+<!-- 			<result name="success">cart.jsp</result> -->
+<!-- 		</actin> -->
+
+
 		<!-- InquiryAction -->
 		<action name="InquiryAction" class="com.internousdev.ecsite2.action.InquiryAction" method="execute">
 			<result name="success">inquiry.jsp</result>
@@ -123,8 +134,13 @@
 		</action>
 
 		<!-- ItemInventoryControlAction -->
-		<action name="ItemInventoryControlAction" class="com.internousdev.ecsite2.action.ItemInventoryAction" method="execute">
+		<action name="ItemInventoryControlAction" class="com.internousdev.ecsite2.action.ItemInventoryControlAction" method="execute">
 			<result name="success">itemInventoryConfirm.jsp</result>
+		</action>
+
+		<!-- ItemInventoryConfirmAction -->
+		<action name="ItemInventoryConfirmAction" class="com.internousdev.ecsite2.action.ItemInventoryConfirmAction" method="execute">
+			<result name="success">itemInventoryComplete.jsp</result>
 		</action>
 
 		<!-- GoItemInsertAction -->

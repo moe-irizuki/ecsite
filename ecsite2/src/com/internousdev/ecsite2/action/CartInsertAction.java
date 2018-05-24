@@ -17,7 +17,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 	private int productId;
 	private int productCount;
 	private int price;
-	private ArrayList<CartInfoDTO> cartInfoDTO = new Arraylist<CartInfoDTO>();
+	private ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
 	private String errorMessage;
 	private int cartTotalPrice;
 	private boolean loginFlg;
@@ -45,9 +45,9 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 
 		//同じ商品がすでにカートに入っているか確認。
 		int count = 0;
-		if(cartInfoDAO.sameProductExsits(userId, productId)) {
+		if(cartInfoDAO.sameProductExists(userId, productId)) {
 
-			count = cartInfoDAO.cartInfoDAO.updateCartProductCount(userId, productId, productCount, price);
+			count = cartInfoDAO.updateCartProductCount(userId, productId, productCount);
 			if(count == 0) {
 				return "errorPage";
 			}
@@ -125,7 +125,11 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 		this.cartList = cartList;
 	}
 
-	public String getErrorMessage(String errorMessage) {
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage){
 		this.errorMessage = errorMessage;
 	}
 

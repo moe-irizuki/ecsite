@@ -20,15 +20,7 @@
 
 <body>
 
-	<div id="header">
-		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
-			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
-		</div>
-	</div>
+	<jsp:include page="includeHeader.jsp" />
 
 	<div id="main">
 		<div id="contents">
@@ -42,14 +34,14 @@
 			<s:iterator value="buyItemDTOList">
 			<s:if test="count != 0">
 				<img src="<s:property value='image' />">
-				<p><s:property value="=itemName" /><p>
+				<p><s:property value="itemName" /><p>
 				<p>値段：<s:property value="itemPrice" />円</p>
 				<p>現在の在庫：<s:property value="item_stock" />個</p>
 				<p>追加個数<s:property value="count" />個</p>
 			</s:if>
 			</s:iterator>
 			<div>
-				<input type="button" class="button" value="在庫数の変更" onclick="submitAction('ItemInventoryControlAction')" />
+				<input type="button" class="button" value="在庫数の変更" onclick="submitAction('ItemInventoryConfirmAction')" />
 			</div>
 			</s:form>
 			</div>

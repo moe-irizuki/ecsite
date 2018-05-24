@@ -14,7 +14,7 @@ public class ItemInventoryDAO {
 
 	private Connection connection = dbConnector.getConnection();
 
-	private String sql = "UPDATE item_info_transaction SET item_stock=? WHERE id=?";
+	private String sql = "UPDATE item_info_transaction SET item_stock =? WHERE id =?";
 
 	public void itemInfo(int countControl, int item_transaction_id) throws SQLException{
 

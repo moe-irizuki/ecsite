@@ -26,7 +26,7 @@ public class ItemInventoryControlAction extends ActionSupport implements Session
 		@SuppressWarnings("unchecked")
 		List<BuyItemDTO> list=(List<BuyItemDTO>) session.get("buyItemDTOList");
 
-		for(int i=0; i < count.size(); i++){
+		for(int i=0; i<count.size(); i++){
 
 			BuyItemDTO buyItemDTO = new BuyItemDTO();
 
@@ -40,7 +40,7 @@ public class ItemInventoryControlAction extends ActionSupport implements Session
 
 			int id = list.get(i).getId();
 
-			int totalCount = itemStock = intCount;
+			int totalCount = itemStock + intCount;
 
 			if(intCount != 0){
 

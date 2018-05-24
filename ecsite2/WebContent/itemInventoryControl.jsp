@@ -13,22 +13,14 @@
 		$('form').attr('action', url);
 		$('form').submit();
 	}
-	</script>
+</script>
 
 <title>ItemInventoryControl画面</title>
 </head>
 
 <body>
 
-	<div id="header">
-		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
-			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
-		</div>
-	</div>
+	<jsp:include page="includeHeader.jsp" />
 
 	<div id="main">
 		<div id="contents">
@@ -41,22 +33,24 @@
 			<s:form>
 			<s:iterator value="buyItemDTOList">
 				<img src="<s:property value='image' />">
-				<p><s:property value="=itemName" /><p>
+				<p><s:property value="itemName" /><p>
 				<p>値段：<s:property value="itemPrice" />円</p>
 				<p>在庫：<s:property value="item_stock" />個</p>
 				<p>変更する数：
-					<select>
-					<script>
-					var i;
 
-					for(i=0; i<31; i++){
-					document.write('<option value="'+i+'">'+i+'</option>');
-					}
+				<script>
+					document.write("<select class='select-box' name='count'>");
+					document.write("<option value='0' selected='selected'>-</option>");
+					for(i=1; i<11 ;i++){
+						document.write("<option value='");
+						document.write(i);
+						document.write("'>");
+						document.write(i);
+						document.write("</option>");
+					};
 
-					</script>
-
-					</select>
-					個</p>
+					document.write("</select>");
+				</script><br>
 
 			</s:iterator>
 			<div>
