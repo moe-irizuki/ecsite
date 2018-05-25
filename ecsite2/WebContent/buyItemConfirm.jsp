@@ -82,9 +82,8 @@
 			<br>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+
+	<jsp:include page="includeFooter.jsp" />
+
 </body>
 </html>

@@ -32,7 +32,7 @@
 
 	#main {
 	   width: 100%;
-	   height: 500px;
+	   height: auto;
 	   text-align: center;
 	}
 
@@ -48,6 +48,11 @@
 		text-shadow: 3px 4px 1px #c9baa6;
 	}
 
+	footer{
+		position:fixed;
+		bottom:0;
+	}
+
 	</style>
 
 </head>
@@ -61,5 +66,9 @@
 			<br>
 			<h3>WELCOME TO MY SHOP!!</h3>
 	</div>
+
+<footer>
+	<jsp:include page="includeFooter.jsp" />
+</footer>
 </body>
 </html>

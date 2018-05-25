@@ -6,7 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<title>Inquiry List Page</title>
+<title>Inquiry List Page</title><style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -82,9 +90,7 @@
 		</div>
 	</div>
 
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 </body>
 </html>

@@ -7,19 +7,20 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <title>Administration画面</title>
+<style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
+
 </head>
 
 <body>
 
-	<div id="header">
-		<div id="pr">
-			<p>LOGIN</p>
-			<p>MY PAGE</p>
-			<p>CART</p>
-			<p>PRODUCT LIST</p>
-			<p>INQUIRY</p>
-		</div>
-	</div>
+	<jsp:include page="includeHeader.jsp" />
 
 	<div id="main">
 		<div id="contents">
@@ -41,9 +42,7 @@
 		</div>
 	</div>
 
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 </body>
 </html>

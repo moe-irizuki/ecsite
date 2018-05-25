@@ -4,7 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<title>Error Page</title>
+<title>Error Page</title><style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -17,10 +25,8 @@
 			<p>恐れ入りますが、<a href='<s:url action="HomeAction" />'>ログイン</a>からやり直してください。</p>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+
+	<jsp:include page="includeFooter.jsp" />
 
 </body>
 </html>

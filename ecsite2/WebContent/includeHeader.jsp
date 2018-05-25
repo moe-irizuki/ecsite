@@ -8,7 +8,8 @@ header{
 	padding:0;
 	width:100%;
 	height:80px;
-	background-color:#302417;
+	background-color:#3B2503;
+	font-family:Impact, 'Yu Gothic', Verdana, Helvetica, sans-serif;
 }
 
 #header ul{
@@ -49,17 +50,6 @@ li a:hover{
 		<a href="<s:url action='GoHomeAction' />"><img src="./images/top.jpg" width=50px height=50px/></a>
 	</div>
 
-<!-- 	<p> -->
-<%-- 	<s:if test="#session.loginFlg"> --%>
-<%-- 		ようこそ！<span> --%>
-<%-- 		<s:property="#session.userId" /> --%>
-<%-- 		</span>さん --%>
-<%-- 	</s:if> --%>
-<%-- 	<s:elseif test="#session.tempUserId"> --%>
-<%-- 		ようこそ！<span>ゲスト</span>さん --%>
-<%-- 	</s:elseif> --%>
-<!-- 	</p> -->
-
 	<div id="header">
 		<ul>
 			<li><a href='<s:url action="GoHomeAction" />'>HOME</a></li>
@@ -71,7 +61,7 @@ li a:hover{
 				<li><a href='<s:url action="LogoutAction" />'>LOGOUT</a></li>
 			</s:if>
 			<s:else>
-				<li><a href='<s:url action="LoginAction" />'>LOGIN</a></li>
+				<li><a href='<s:url action="GoLoginAction" />'>LOGIN</a></li>
 			</s:else>
 		</ul>
 

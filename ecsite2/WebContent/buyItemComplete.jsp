@@ -8,6 +8,15 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <title>BuyItemComplete画面</title>
+<style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -29,9 +38,11 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
-</body>
+
+<footer>
+
+	<jsp:include page="includeFooter.jsp" />
+
+</footer>
+	</body>
 </html>

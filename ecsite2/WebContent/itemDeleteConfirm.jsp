@@ -7,15 +7,23 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-	<script type="text/javascript">
-		function submitAction(url) {
-			$('form').attr('action', url);
-			$('form').submit();
-		}
-	</script>
+<script type="text/javascript">
+	function submitAction(url) {
+		$('form').attr('action', url);
+		$('form').submit();
+	}
+</script>
 
+<style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
 
 <title>ItemDeleteConfirm画面</title>
 </head>
@@ -63,9 +71,7 @@
 		</div>
 	</div>
 
-	<div id ="footer">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 	</body>
 </html>

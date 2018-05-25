@@ -119,7 +119,7 @@
 		</div>
 	</div>
 
-	<div id="footer">
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 </body>
 </html>

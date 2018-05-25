@@ -21,8 +21,7 @@
 				<p>LOGIN</p>
 			</div>
 			<div>
-				<p class="error-message">ログインに失敗しました。</p>
-				<p>ID・PASSをご確認の上、再度ご入力ください。</p>
+				<p>ID・PASSを入力してログインしてください。</p>
 			</div>
 
 				<s:form action="LoginAction">
@@ -45,12 +44,10 @@
 						<br>
 						<br>
 				</div>
-			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+
+	<jsp:include page="includeFooter.jsp" />
+
 </body>
 </html>

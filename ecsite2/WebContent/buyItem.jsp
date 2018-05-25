@@ -15,7 +15,6 @@
 
 	<div id="main">
 		<div id="contents">
-			<br>
 			<div id="top">
 				<p>Buy Item</p>
 			</div>
@@ -74,11 +73,9 @@
 				</div>
 			</div>
 		</div>
-		<br>
 	</div>
-	<div id ="footer">
-		<div id="pr">
-		</div>
-	</div>
+
+	<jsp:include page="includeFooter.jsp" />
+
 	</body>
 </html>

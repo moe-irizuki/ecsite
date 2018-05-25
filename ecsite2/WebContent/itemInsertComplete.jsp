@@ -21,7 +21,7 @@
 			</div>
 			<div>
 
-			<p>追加する商品の情報を入力してください。</p>
+			<p>以下の商品を追加しました。</p>
 
 			<table>
 			<s:form>
@@ -46,9 +46,7 @@
 		</div>
 	</div>
 
-	<div id ="footer">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 	</body>
 </html>

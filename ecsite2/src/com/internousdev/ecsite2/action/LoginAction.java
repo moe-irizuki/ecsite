@@ -1,181 +1,132 @@
 package com.internousdev.ecsite2.action;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite2.dao.CartDeleteDAO;
-import com.internousdev.ecsite2.dao.CartInfoDAO;
+import com.internousdev.ecsite2.dao.BuyItemDAO;
 import com.internousdev.ecsite2.dao.LoginDAO;
 import com.internousdev.ecsite2.dto.BuyItemDTO;
-import com.internousdev.ecsite2.dto.CartInfoDTO;
 import com.internousdev.ecsite2.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-
+/**
+ * ログイン認証処理
+ * login.jspからログインID、ログインパスワードを受け取り
+ * DBへ問い合わせを行います。
+ */
 public class LoginAction extends ActionSupport implements SessionAware{
 
-	private Map<String, Object> session.
+	private String loginUserId;
 
-	private String userId;
+	private String loginPassword;
 
-	private String tempUserId;
+	public Map<String, Object> session;
 
-	private String password;
+	private LoginDAO loginDAO = new LoginDAO();
 
-	private boolean saveIdFlg;
+	private LoginDTO loginDTO = new LoginDTO();
 
-	private String errorMessage;
+	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 
-	private String idErrorMessage;
+	private BuyItemDTO buyItemDTO = new BuyItemDTO();
 
-	private String passwordErrorMessage;
+	private List<BuyItemDTO> buyItemDTOList;
 
-	private ArrayList<BuyItemtDTO> productDTOList = new ArrayList<BuyItemDTO>();
-	//実行メソッド
-	public String execute() throws SQLException{
+	/**
+	 * 実行メソッド
+	 */
+	public String execute() {
 
-		LoginDAO loginDAO = new LoginDAO();
-		LoginDTO loginDTO = new LoginDTO();
-		CartInfoDAO = cartInfoDAO = new CartInfoDAO();
-		ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
+		String result = ERROR;
 
 
-		//ID保持
-		if(saveIdFlg){
-			session.put("saveId", userId);
+		if(session.containsKey("masterId")){
+			result = "alreadyLogged";
+
+		}else if(session.containsKey("id")){
+			result = "alreadyLogged";
+
 		}else{
-			session,remove("saveId");
+
+		// ログイン実行(LoginDAOのメソッドを使用）
+		//取得した値をloginDTOに格納
+		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+
+		//"loginUser"にloginDTOを紐付け
+		session.put("loginUser", loginDTO);
+
+		/**
+		 * ログイン情報を比較
+		 */
+
+		//loginMasterがtrueだった場合の処理
+		//buyItemDTOListにBuyItemDAOのメソッドを使って
+		//商品情報を格納、"buyItemDTOList"と紐付け
+		//"masterId"にloginUserIdを紐付け
+
+		if(((LoginDTO) session.get("loginUser")).getLoginMaster()){
+			buyItemDTOList = buyItemDAO.getBuyItemInfo();
+			session.put("buyItemDTOList",buyItemDTOList);
+			session.put("masterId",loginUserId);
+			result = "master";
 		}
 
-		//入力チェック
-		if(userId.equals("")){
-			idErrorMessage = ("USER IDを入力してください。");
-		}
+		//masterではない ＆ loginFlgがtrueだった時の処理
+		if(result != "master"){
+			if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
+			result = SUCCESS;
 
-		if(password.equals("")){
-			passwordErrorMessage = ("PASSWORDを入力してください。");
-		}
+			// アイテム情報を取得
+			buyItemDTOList = buyItemDAO.getBuyItemInfo();
 
-		if(idErrorMessage != null || passwordErrorMessage != null){
-			return ERROR;
-		}
+			//BuyItemActionで使用するので、
+			//"buyItemDTOList"に取得したアイテム情報を紐付け
+			//購入する商品名などはBuyItemActionで定義する
+			session.put("buyItemDTOList",buyItemDTOList);
+			session.put("id", buyItemDTO.getId());
+			session.put("login_user_id",loginDTO.getLoginId());
+			session.put("login_password", loginDTO.getLoginPassword());
+			session.put("userName",loginDTO.getUserName());
+			session.put("userAddress",loginDTO.getUserAddress());
+			session.put("userGender",loginDTO.getUserGender());
+			session.put("userTell",loginDTO.getUserTell());
+			session.put("userMail",loginDTO.getUserMail());
 
-		userInfoDTO = loginDAO.getLoginUserInfo(userId, password);
-		if(userInfoDTO.getUserId() == null){
-			errorMessage = ("入力されたPASSWORDが異なります。")
-		}
-
-		//管理者ユーザーか一般ユーザーか判定
-		if(userInfoDTO.getMasterFlg().equals("1")){
-			session.put("MasterFlg", 1);
-			MasterDAO dao = newMasterDAO();
-			productDTOList = dao.getProductInfo();
-			return "master"
-		}else{
-			session.put("userId", userId);
-			session.put("loginFlg", true);
-			session.put("userInfoDTO", userInfoDTO);
+			}
 
 		}
-		return SUCCESS;
-//		String result = ERROR;
-//
-//		// ログイン実行
-//		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
-//
-//		session.put("loginUser", loginDTO);
-//
-//
-//		// ログイン情報を比較
-//		if(((LoginDTO) session.get("loginUser")).getLoginMaster()){
-//			buyItemDTOList=buyItemDAO.getBuyItemInfo();
-//			session.put("buyItemDTOList", buyItemDTOList);
-//			session.put("masterId",loginUserId);
-//			result = "master";
-//
-//		}
-//
-//		if(result != "master"){
-//			if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
-//				result = SUCCESS;
-//
-//				// アイテム情報を取得
-//
-//				buyItemDTOList=buyItemDAO.getBuyItemInfo();
-//
-//				// BuyItemActionで利用したいから"buyItemDTOList"という鍵の名前でbuyItemDTOListのデータを保管する。
-//				session.put("buyItemDTOList", buyItemDTOList);
-//				session.put("id", buyItemDTO.getId());
-//				session.put("login_user_id",loginDTO.getLoginId());
-//				session.put("login_password", loginDTO.getLoginPassword());
-//				session.put("userName", loginDTO.getUserName());
-//				session.put("userAddress", loginDTO.getUserAddress());
-//				session.put("userGender", loginDTO.getUserGender());
-//				session.put("userTell", loginDTO.getUserTell());
-//				session.put("userMail", loginDTO.getUserMail());
-//			}
-//
-//		}
-//
-//
-//		return result;
+
+		}
+
+		return result;
 	}
 
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public String getLoginUserId() {
+		return loginUserId;
 	}
 
-	public String getIdErrorMessage() {
-		return idErrorMessage;
-	}
-	public void setIdErrorMessage(String idErrorMessage) {
-		this.idErrorMessage = idErrorMessage;
+	public void setLoginUserId(String loginUserId) {
+		this.loginUserId = loginUserId;
 	}
 
-	public String getPasswordErrorMessage(){
-		return passwordErrorMessage;
+	public String getLoginPassword() {
+		return loginPassword;
 	}
 
-	public void setPasswordErrorMessage(String passwordErrorMessage){
-		this.passwordErrorMessage = passwordErrorMessage;
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
 	}
 
-	public String getUserId(){
-		return userId;
-	}
-
-	public void setUserId(String userId){
-		this.userId = userId;
-	}
-
-	public String getPassword(){
-		return password;
-	}
-
-	public void setPassword(String password){
-		this.password = password;
-	}
-
-	public ArrayList<BuyItemDTO> getBuyItemDTOList(){
+	public List<BuyItemDTO> getBuyItemDTOList() {
 		return buyItemDTOList;
 	}
-	public void setBuyItemDTOList(ArrayList<BuyItemDTO> buyItemDTOList){
-		this.buyItemDTOList=buyItemDTOList;
+
+	public void setBuyItemDTOList(List<BuyItemDTO> buyItemDTOList) {
+		this.buyItemDTOList = buyItemDTOList;
 	}
 
-	public boolean isSaveIdFlg(){
-		return saveIdFlg;
-	}
-
-	public void setSaveIdFlg(boolean saveIdFlg){
-		this.saveIdFlg = saveIdFlg;
-	}
 
 	@Override
 	public void setSession(Map<String, Object> session) {

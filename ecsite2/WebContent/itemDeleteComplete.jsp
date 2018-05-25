@@ -6,7 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
+<style type="text/css">
 
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
 
 <title>ItemDeleteComplete画面</title>
 </head>
@@ -33,9 +40,7 @@
 		</div>
 	</div>
 
-	<div id ="footer">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="includeFooter.jsp" />
+
 	</body>
 </html>

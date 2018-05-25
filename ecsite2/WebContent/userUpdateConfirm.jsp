@@ -16,7 +16,6 @@
 
 	<div id="main">
 		<div id="contents">
-			<br>
 			<div id="top">
 				<p>USER UPDATE CONFIRM</p>
 			</div>
@@ -67,8 +66,7 @@
 	</div>
 	</div>
 
-	<div id="footer">
-	</div>
+	<jsp:include page="includeFooter.jsp" />
 
 </body>
 </html>

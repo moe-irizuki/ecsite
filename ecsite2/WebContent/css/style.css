@@ -1,70 +1,64 @@
-/* ========TAG LAYOUT======== */
-	body{
-		margin:0px;
-		padding:0px;
-		line-height:1.6;
-		letter-spacing:1px;
-		font-family:'Mv Bol','Bodoni 72 Smallcaps','í}éáAä€ÉSÉVÉbÉN','MS ÉSÉVÉbÉN',Helvetica,sans-serif;
-		font-size:12px;
-		color:#333;
-		background-image: url(../images/ec1.jpg);
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-	}
-	table{
-		text-align:center;
-		margin:0 auto;
-	}
-/* ========ID LAYOUT======== */
-	#header{
-		width:100%;
-/* 		height:50px; */
-/* 		background-color:#DCDCDC; */
-	}
-	#left{
-		float:left;
-		width:70%;
-/* 		height:90%; */
-	}
-	#right{
-		float:right;
-		width:30%;
-/* 		height:90%; */
-	}
-	#top{
-		width:70%;
-		margin:30px auto;
-		border:1px solid rgba(128,128,128,0.8);
-	}
-	#main{
-		width:100%;
-		height:auto;
-		text-align:center;
-	}
-	#contents{
-		width:80%;
-		height:auto;
-		margin:50px auto;
-		padding:10px 5px 20px 5px;
-		background-color:rgba(255,255,255,0.7);
-	}
-	#contents img{
-		width:150px;
-		height:auto;
+html{
+	height:100%;
+}
+body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	line-height:1.6;
+	letter-spacing:1px;
+	font-family:Impact, 'Yu Gothic', Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	background-image: url(../images/mainbg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+table{
+	text-align:center;
+	margin:0 auto;
+}
+#left{
+	float:left;
+	width:70%;
+}
+#right{
+	float:right;
+	width:30%;
+}
+#top{
+	width:70%;
+	margin:30px auto;
+	border:1px solid rgba(128,128,128,0.8);
+}
+#main{
+	width:100%;
+	height:auto;
+	text-align:center;
+	margin:20px auto;
+}
+#contents{
+	width:80%;
+	height:auto;
+	margin:40px auto;
+	padding:10px 5px 20px 5px;
+	background-color:rgba(255,255,255,0.7);
+}
+#contents img{
+	width:150px;
+	height:auto;
 /* 		text-align:center; */
-	}
-
-	#footer{
-		width:100%;
-		height:50px;
-		margin:0;
-		padding:0;
-		background-color:#DCDCDC;
-		clear:both;
-/* 		position:absolute; */
-		bottom:0;
-/* 		position:fixed; */
-/* 		bottom:0; */
-	}
+}
+footer{
+	width:100%;
+	height:50px;
+	margin:0;
+	padding:0;
+	background-color:#DCDCDC;
+	clear:both;
+/* 	position:fixed; */
+	bottom:0;
+}
