@@ -16,16 +16,15 @@ public class CartInfoDAO {
 
 	//ユーザーのカートに商品を追加する
 	public int insertUserCart(String userId, int productId, int productCount, int price) throws SQLException{
-		String sql = "INSERT INTO cart_info(user_id, temp_user_id, product_id, product_count, price, insert_date) VALUES(?,?,?,?,NOW())";
+		String sql = "INSERT INTO cart_info(user_id, product_id, product_count, price, insert_date) VALUES(?,?,?,NOW())";
 		int count = 0;
 		try{
 			con = dbConnector.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
-			ps.setString(2, userId);
-			ps.setInt(3, productId);
-			ps.setInt(4, productCount);
-			ps.setInt(5, price);
+			ps.setInt(2, productId);
+			ps.setInt(3, productCount);
+			ps.setInt(4, price);
 			count = ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -39,15 +38,15 @@ public class CartInfoDAO {
 	public ArrayList<CartInfoDTO> getUserCartList(String userId) throws SQLException{
 		int totalPrice = 0;
 		ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
-		String sql = "SELECT pi.product_stock as product_stock,"
+		String sql = "SELECT iit.item_stock as item_stock,"
 				+ "ci.user_id as userId,"
 				+ "ci.id as cartId,"
 				+ "ci.product_id as userId,"
-				+ "pi.product_name as product_name,"
-				+ "pi.image as image,"
-				+ "pi.price as prive,"
-				+ "ci.product_count product_count,"
-				+ "FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
+				+ "iit.item_name as item_name,"
+				+ "iit.image as image,"
+				+ "iit.item_price as item_price,"
+				+ "ci.product_count as product_count,"
+				+ "FROM cart_info as ci LEFT JOIN item_info_transaction as iit ON ci.product_id = iit.product_id WHERE ci.user_id = ?";
 		try{
 			con = dbConnector.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);

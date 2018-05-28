@@ -35,9 +35,9 @@
 		</action>
 
 		<!-- CartInsertAction -->
-<!-- 		<actin name="CartInsertAction" class="com.internousdev.ecsite2.action.CartInsertAction" method="execute"> -->
-<!-- 			<result name="success">cart.jsp</result> -->
-<!-- 		</actin> -->
+		<action name="CartInsertAction" class="com.internousdev.ecsite2.action.CartInsertAction" method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
 
 
 		<!-- InquiryAction -->

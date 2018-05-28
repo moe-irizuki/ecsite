@@ -19,7 +19,7 @@
 				<div id="top">
 					<p>PRODUCT LIST</p>
 				</div>
-				<s:form action="BuyItemAction">
+				<s:form action="CartInsertAction">
 					<table>
 						<s:iterator value="buyItemDTOList">
 							<tr>
@@ -90,11 +90,7 @@
 							<input type="radio" name="pay" value="2">クレジットカード
 						</td>
 					</tr>
-						<tr>
-							<td>
-								<s:submit value="購入" />
-							</td>
-						</tr>
+					<s:submit class="button" value="カートに入れる" />
 					</table>
 				</s:form>
 

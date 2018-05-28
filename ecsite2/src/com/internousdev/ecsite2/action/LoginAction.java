@@ -86,13 +86,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			//購入する商品名などはBuyItemActionで定義する
 			session.put("buyItemDTOList",buyItemDTOList);
 			session.put("id", buyItemDTO.getId());
-			session.put("login_user_id",loginDTO.getLoginId());
+			session.put("userId",loginDTO.getLoginId());
 			session.put("login_password", loginDTO.getLoginPassword());
 			session.put("userName",loginDTO.getUserName());
 			session.put("userAddress",loginDTO.getUserAddress());
 			session.put("userGender",loginDTO.getUserGender());
 			session.put("userTell",loginDTO.getUserTell());
 			session.put("userMail",loginDTO.getUserMail());
+			session.put("loginFlg", true);
 
 			}
 

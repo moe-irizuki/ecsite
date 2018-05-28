@@ -31,9 +31,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 
 		if(loginFlg) {
 			userId = session.get("userId").toString();
-		}else {
-			userId = session.get("tempUserId").toString();
-		}
+	}
 
 		//在庫が足りているか確認
 		int cartProductCount = cartInfoDAO.getCartProductCount(userId, productId);

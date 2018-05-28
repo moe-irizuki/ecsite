@@ -54,7 +54,7 @@ public class CartInfoDTO {
 		return productCount;
 	}
 
-	public void setProductCount(int prodeuctCount){
+	public void setProductCount(int productCount){
 		this.productCount = productCount;
 	}
 
