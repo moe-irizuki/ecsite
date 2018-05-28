@@ -20,6 +20,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 	private ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
 	private String errorMessage;
 	private int cartTotalPrice;
+	private String pay;
 	private boolean loginFlg;
 
 	//商品詳細に戻すための情報
@@ -34,28 +35,28 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 	}
 
 		//在庫が足りているか確認
-		int cartProductCount = cartInfoDAO.getCartProductCount(userId, productId);
-		int stock = cartInfoDAO.getProductStock(productId);
-		if(cartProductCount > stock) {
-			errorMessage = "在庫が足りなかったため、これ以上カートに入れられません。";
-			return ERROR;
-		}
+//		int cartProductCount = cartInfoDAO.getCartProductCount(userId, productId);
+//		int stock = cartInfoDAO.getProductStock(productId);
+//		if(cartProductCount > stock) {
+//			errorMessage = "在庫が足りなかったため、これ以上カートに入れられません。";
+//			return ERROR;
+//		}
 
 		//同じ商品がすでにカートに入っているか確認。
-		int count = 0;
-		if(cartInfoDAO.sameProductExists(userId, productId)) {
-
-			count = cartInfoDAO.updateCartProductCount(userId, productId, productCount);
-			if(count == 0) {
-				return "errorPage";
-			}
-		}else {
+		int i = 0;
+//		if(cartInfoDAO.sameProductExists(userId, productId)) {
+//
+//			count = cartInfoDAO.updateCartProductCount(userId, productId, productCount);
+//			if(count == 0) {
+//				return "errorPage";
+//			}
+//		}else {
 			//無い場合は、普通に入れる。
-			count = cartInfoDAO.insertUserCart(userId, productId, productCount, price);
-			if(count == 0) {
+			i = cartInfoDAO.insertUserCart(userId, productId, productCount, price);
+			if(i == 0) {
 				errorMessage = "カートに商品を追加するのに失敗しました。";
 			}
-		}
+		//}
 
 		//カート画面にカート商品一覧を表示させるための処理
 		cartList = cartInfoDAO.getUserCartList(userId);
@@ -113,6 +114,15 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+
+	public String getPay() {
+		return pay;
+	}
+
+	public void setPay(String pay) {
+		this.pay = pay;
 	}
 
 	public ArrayList<CartInfoDTO> getCartList(){

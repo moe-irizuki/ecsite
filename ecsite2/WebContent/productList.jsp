@@ -59,7 +59,7 @@
 								</td>
 								<td>
 								<s:if test="item_stock>0">
-									<select name="count">
+									<select name="productCount">
 										<option value="0" selected="selected">--</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -69,7 +69,7 @@
 									</select>
 								</s:if>
 								<s:else>
-									<select name="count">
+									<select name="productCount">
 										<option value="0" selected="selected">0</option>
 									</select>
 								</s:else>

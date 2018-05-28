@@ -7,6 +7,15 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <title>Cart画面</title>
+<style type="text/css">
+
+footer{
+	position:fixed;
+	bottom:0;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -37,7 +46,7 @@
 									<p>価格：<span><s:property value="price" /></span>円</p>
 								</div>
 								<div>
-									<p>個数：<span><s:property value="count" /></span>個</p>
+									<p>個数：<span><s:property value="productCount" /></span>個</p>
 								</div>
 								<div>
 									<span>TOTAL：<s:property value="totalPrice" />円</span>
