@@ -43,13 +43,13 @@ footer{
 									<p>商品名：<span><s:property value="productName" /></span></p>
 								</div>
 								<div>
+									<img src="<s:param name="image" value='%{image}' />" />
+								</div>
+								<div>
 									<p>価格：<span><s:property value="price" /></span>円</p>
 								</div>
 								<div>
 									<p>個数：<span><s:property value="productCount" /></span>個</p>
-								</div>
-								<div>
-									<span>TOTAL：<s:property value="totalPrice" />円</span>
 								</div>
 							</div>
 						</s:iterator>
@@ -59,14 +59,14 @@ footer{
 
 		<div id="right">
 			<div id="contents">
+				<div id="top">
+					<p>TOTAL PRICE</p>
+				</div>
 				<div>
-					<p>合計金額：<s:property value="cartTotalPrice" />円</p>
+					<p><s:property value="cartTotalPrice" />円</p>
 					<s:form action="BuyItemConfirmAction">
 						<s:submit value="決済" />
 					</s:form>
-<!-- 					<div> -->
-<%-- 						<s:submit value="チェックした商品を削除" form="delete-form" /> --%>
-<!-- 					</div> -->
 				</div>
 			</div>
 		</div>

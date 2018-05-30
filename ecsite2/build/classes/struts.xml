@@ -12,11 +12,6 @@
 			<result name="success">home.jsp</result>
 		</action>
 
-		<!-- HomeAction -->
-<!-- 		<action name="HomeAction" class="com.internousdev.ecsite2.action.HomeAction" method="execute"> -->
-<!-- 			<result name="success">productList.jsp</result> -->
-<!-- 		</action> -->
-
 		<!-- GoLoginAction -->
 		<action name="GoLoginAction" class="com.internousdev.ecsite2.action.GoLoginAction" method="execute">
 			<result name="success">login.jsp</result>
@@ -79,6 +74,12 @@
 			<result name="success">productList.jsp</result>
 			<result name="master">productList.jsp</result>
 			<result name="error">login.jsp</result>
+		</action>
+
+		<!-- ProductDetailsAction -->
+		<action name="ProductDetailsAction" class="com.internousdev.ecsite2.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+			<result name="error">productDetails.jsp</result>
 		</action>
 
 		<!-- BuyItemAction -->
@@ -177,6 +178,11 @@
 		<action name="GoInquiryListAction" class="com.internousdev.ecsite2.action.GoInquiryListAction" method="execute">
 			<result name="success">inquiryList.jsp</result>
 		</action>
+
+		<!-- InquiryAllDeleteAction -->
+<!-- 		<action name="InquiryAllDeleteAction" class="com.internoudev.ecsite2.action.InquiryAllDeleteAction" method="execute"> -->
+<!-- 			<result name="success">inquiryList.jsp</result> -->
+<!-- 		</action> -->
 
 		<!-- LogoutAction -->
 		<action name="LogoutAction" class="com.internousdev.ecsite2.action.LogoutAction" method="execute">
