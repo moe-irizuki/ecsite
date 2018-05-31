@@ -19,14 +19,12 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	//マイページ情報格納DTO
 	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
-	
-	//ログイン状態かどうかを判別
-	//未ログイン→ログイン画面へ
-	//ログイン状態→
 
 	//削除フラグ
 	private String deleteFlg;
+
 	private String message;
+
 	private List<BuyItemDTO> buyItemDTOList;
 
 	/**
@@ -34,19 +32,16 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 */
 
 	public String execute() throws SQLException{
-		
-		//ログイン状態かどうかを判別
-		String result = ERROR;
-		
-		if((boolean)session.get("loginFlg")) {
-			
-			//セッション情報取得
-			MyPageDAO myPageDAO = new MyPageDAO();
-			userId = session.get("userId")
-		}
+
 		@SuppressWarnings("unchecked")
 		List<BuyItemDTO> buyItemDTOList = (List<BuyItemDTO>) session.get("list");
+
 		if(!session.containsKey("id")) {
+
+			if(session.containsKey("masterId")){
+
+				return "master";
+			}
 			return ERROR;
 		}
 
@@ -57,26 +52,38 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			for(int i=0; i<buyItemDTOList.size(); i++){
 
 			String user_master_id = session.get("login_user_id").toString();
+
 			MyPageDAO myPageDAO = new MyPageDAO();
+
 			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
+			session.put("myPageList", myPageList);
+
 			}
+
 		}else{
 			String user_master_id = session.get("login_user_id").toString();
 			MyPageDAO myPageDAO = new MyPageDAO();
 			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
+			session.put("myPageList", myPageList);
 		}
 
 		Iterator<MyPageDTO> iterator = myPageList.iterator();
+
 		if(!(iterator.hasNext())){
 			myPageList = null;
 		}
+
 	//商品購入履歴を削除する場合
 	}else{
+
 		delete();
+
 	}
 
 	String result = SUCCESS;
+
 	return result;
+
 }
 
 	/**
@@ -85,8 +92,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 * @throws SQLException
 	 */
 	public void delete() throws SQLException{
-		@SuppressWarnings("unchecked")
-		List<BuyItemDTO> buyItemDTOList = (List<BuyItemDTO>) session.get("list");
 
 		String user_master_id = session.get("login_user_id").toString();
 
@@ -94,10 +99,15 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		int res = myPageDAO.buyItemHistoryDelete(user_master_id);
 
 		if(res > 0){
+
 			myPageList = null;
+
 			setMessage("商品情報を正しく削除しました。");
+
 		}else if(res == 0){
+
 			setMessage("商品情報の削除に失敗しました。");
+
 		}
 	}
 

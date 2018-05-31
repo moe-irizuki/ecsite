@@ -90,13 +90,12 @@
 
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction" class="com.internousdev.ecsite2.action.BuyItemConfirmAction" method="execute">
-			<result name="success">buyItemComplete.jsp</result>
-			<result name="back">productList.jsp</result>
+			<result name="success">buyItemConfirm.jsp</result>
 		</action>
 
 		<!-- BuyItemCompleteAction -->
 		<action name="BuyItemCompleteAction" class="com.internousdev.ecsite2.action.BuyItemCompleteAction" method="execute">
-			<result name="success">home.jsp</result>
+			<result name="success">buyItemComplete.jsp</result>
 		</action>
 
 		<!-- ItemSearchAction -->

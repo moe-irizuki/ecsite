@@ -28,46 +28,42 @@
 				<p>BuyItemConfirm</p>
 			</div>
 			<div>
-				<s:form>
+				<s:form action="BuyItemCompleteAction">
 
-				<s:iterator value="buyItemDTOList">
-				<s:if test="count != 0">
+				<s:iterator value="cartList">
 					<tr>
 						<td>商品名</td>
-						<td><s:property value="itemName" /></td>
+						<td><s:property value="productName" /></td>
 					</tr>
 					<tr>
 						<td>値段</td>
-						<td><s:property value="total_price" /><span>円</span></td>
+						<td><s:property value="price" /><span>円</span></td>
 					</tr>
 
 					<tr>
 						<td>購入個数</td>
-						<td><s:property value="count" /><span>個</span></td>
+						<td><s:property value="productCount" /><span>個</span></td>
 					</tr>
 					<tr>
-						<td>支払い方法</td>
-						<td><s:property value="pay" /></td>
+						<td>小計</td>
+						<td><s:property value="totalPrice" /></td>
 					</tr>
 					<tr>
 						<td>
 							<br>
 						</td>
 					</tr>
-					</s:if>
 				</s:iterator>
 					<tr>
 						<td>お届け先</td>
 						<td><s:property value="session.userAddress"/></td>
 					</tr>
-					<s:if test="buyItemDTOList.size() >1">
 					<tr>
 						<td><h3>合計：</h3></td>
 						<td>
-							<h3><s:property value="session.totalPrice"/><span>円</span></h3>
+							<h3><s:property value="finallyTotalPrice"/><span>円</span></h3>
 						</td>
 					</tr>
-					</s:if>
 					<tr>
 						<td>
 							<br>
@@ -75,7 +71,7 @@
 					</tr>
 					<tr>
 						<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
-						<td><input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')" /></td>
+						<td><s:submit value="決済" /></td>
 					</tr>
 				</s:form>
 			</div>

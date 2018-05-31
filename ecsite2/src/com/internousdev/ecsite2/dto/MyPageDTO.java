@@ -1,13 +1,15 @@
 package com.internousdev.ecsite2.dto;
 
 public class MyPageDTO {
-	public String itemName;
-	public String totalPrice;
-	public String totalCount;
-	public String payment;
-	public String userName;
-	public String id;
-	public String insert_date;
+	private String itemName;
+	private String totalPrice;
+	private String totalCount;
+	private String payment;
+	private String userName;
+	private String id;
+	private String insert_date;
+	private String login_id;
+
 
 	public String getItemName() {
 		return itemName;
@@ -56,6 +58,14 @@ public class MyPageDTO {
 	}
 	public void setInsert_date(String insert_date) {
 		this.insert_date = insert_date;
+	}
+
+	public String getLogin_id(){
+		return login_id;
+	}
+
+	public void setLogin_id(String login_id){
+		this.login_id = login_id;
 	}
 
 }
