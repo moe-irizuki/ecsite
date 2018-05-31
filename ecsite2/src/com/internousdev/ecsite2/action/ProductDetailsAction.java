@@ -31,7 +31,6 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 
 	public String execute() throws SQLException{
 		try {
-			System.out.println(product_id);
 			detail = productDetailsDAO.getProductDetailsInfo(product_id);
 			if(detail != null) {
 				product_id = detail.getProduct_id();
@@ -81,7 +80,7 @@ public void setId(int id) {
 	this.id = id;
 }
 
-public int product_id() {
+public int getProduct_id() {
 	return product_id;
 }
 

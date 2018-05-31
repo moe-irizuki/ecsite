@@ -37,13 +37,14 @@ footer{
 
 				<s:form action="CartAction">
 					<s:hidden name="deleteFlg" value="true" />
-						<s:iterator value="cartList" status="st">
+						<s:iterator value="cartList">
 							<div>
+								<a href='<s:url action="ProductDetailsAction">
+									<s:param name="product_id" value="%{product_id}" /></s:url>'>
+									<img src="<s:property value='image' />">
+								</a>
 								<div>
 									<p>商品名：<span><s:property value="productName" /></span></p>
-								</div>
-								<div>
-									<img src="<s:param name="image" value='%{image}' />" />
 								</div>
 								<div>
 									<p>価格：<span><s:property value="price" /></span>円</p>

@@ -20,19 +20,21 @@
 			</div>
 			<div>
 				<s:form action="CartInsertAction">
-					<img class="DetailImg" src="<s:property value='image' />">
+					<img src="<s:property value='image' />">
 					<h3><b><s:property value="itemName" /></b></h3>
 					<p><s:property value="itemPrice" />円</p>
 					<p>在庫数：<s:property value="item_stock" />個</p>
 					<s:if test="item_stock>0">
 						<select name="productCount">
-							<option value="0" selected="selected">--</option>
-							<option value="1">1</option>
+							<option value="1" selected="selected">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
 							<option value="5">5</option>
 						</select>
+
+						<s:hidden name="product_id" value="%{product_id}" />
+
 						<s:submit class="button" value="カートに入れる" />
 					</s:if>
 					<s:elseif test="item_stock == 0">

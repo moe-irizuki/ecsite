@@ -21,14 +21,14 @@
 				</div>
 				<s:iterator value="session.buyItemDTOList">
 				<div class="productList">
-					<a href="<s:url action="ProductDetailsAction" />
+					<a href="<s:url action="ProductDetailsAction">
 						<s:param name="product_id" value="%{product_id}"/>
 					 	<s:param name="itemName" value="%{itemName}"/>
 	 					<s:param name="image" value="%{image}"/>
-	 					<s:param name="itemPrice" value="%{itemPrice}"/>">
+	 					<s:param name="itemPrice" value="%{itemPrice}"/>
+	 					</s:url>">
 
 					<span>
-						<s:property value="product_id" />
 						<s:property value="itemName" />
 					</span><br>
 					<span>

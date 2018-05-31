@@ -14,7 +14,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 
 	private Map<String, Object> session;
 	private String userId;
-	private int productId;
+	private int product_id;
 	private int productCount;
 	private int price;
 	private ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
@@ -52,7 +52,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 //			}
 //		}else {
 			//無い場合は、普通に入れる。
-			i = cartInfoDAO.insertUserCart(userId, productId, productCount, price);
+			i = cartInfoDAO.insertUserCart(userId, product_id, productCount, price);
 			if(i == 0) {
 				errorMessage = "カートに商品を追加するのに失敗しました。";
 			}
@@ -92,12 +92,14 @@ public class CartInsertAction extends ActionSupport implements SessionAware{
 		this.userId = userId;
 	}
 
-	public int getProductId() {
-		return productId;
+
+
+	public int getProduct_id() {
+		return product_id;
 	}
 
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
 	}
 
 	public int getProductCount() {

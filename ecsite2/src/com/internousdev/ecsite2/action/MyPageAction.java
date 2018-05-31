@@ -19,6 +19,10 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	//マイページ情報格納DTO
 	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	
+	//ログイン状態かどうかを判別
+	//未ログイン→ログイン画面へ
+	//ログイン状態→
 
 	//削除フラグ
 	private String deleteFlg;
@@ -30,6 +34,16 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 */
 
 	public String execute() throws SQLException{
+		
+		//ログイン状態かどうかを判別
+		String result = ERROR;
+		
+		if((boolean)session.get("loginFlg")) {
+			
+			//セッション情報取得
+			MyPageDAO myPageDAO = new MyPageDAO();
+			userId = session.get("userId")
+		}
 		@SuppressWarnings("unchecked")
 		List<BuyItemDTO> buyItemDTOList = (List<BuyItemDTO>) session.get("list");
 		if(!session.containsKey("id")) {

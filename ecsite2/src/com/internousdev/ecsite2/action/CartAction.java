@@ -23,11 +23,11 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public String execute() throws SQLException{
 		CartInfoDAO cartInfoDAO = new CartInfoDAO();
 		CartDeleteDAO cartDeleteDAO = new CartDeleteDAO();
-		String userId = (String) session.get("userId");
+		String loginId = (String) session.get("login_Id");
 		boolean loginFlg =(boolean) session.get("loginFlg");
 
 		if(loginFlg){
-			userId = session.get("userId").toString();
+			loginId = session.get("login_Id").toString();
 		}
 
 		if(deleteFlg){
@@ -40,9 +40,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 			}else{
 				//チェックされたカート情報を削除する
 				for(String productId: deleteList){
-					int count = cartDeleteDAO.deleteUserCart(userId, Integer.parseInt(productId));
+					int count = cartDeleteDAO.deleteUserCart(loginId, Integer.parseInt(productId));
 					if(count == 0){
-						cartList = cartInfoDAO.getUserCartList(userId);
+						cartList = cartInfoDAO.getUserCartList(loginId);
 						cartTotalPrice = calcTotalPrice(cartList);
 						errorMessage = "削除中にエラーが発生しました。";
 						return SUCCESS;
@@ -51,7 +51,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 			}
 		}
 
-		cartList = cartInfoDAO.getUserCartList(userId);
+		cartList = cartInfoDAO.getUserCartList(loginId);
 
 		cartTotalPrice = calcTotalPrice(cartList);
 

@@ -83,10 +83,10 @@
 		</action>
 
 		<!-- BuyItemAction -->
-		<action name="BuyItemAction" class="com.internousdev.ecsite2.action.BuyItemAction" method="execute">
-			<result name="success">buyItemConfirm.jsp</result>
-			<result name="error">productList.jsp</result>
-		</action>
+<!-- 		<action name="BuyItemAction" class="com.internousdev.ecsite2.action.BuyItemAction" method="execute"> -->
+<!-- 			<result name="success">buyItemConfirm.jsp</result> -->
+<!-- 			<result name="error">productList.jsp</result> -->
+<!-- 		</action> -->
 
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction" class="com.internousdev.ecsite2.action.BuyItemConfirmAction" method="execute">
