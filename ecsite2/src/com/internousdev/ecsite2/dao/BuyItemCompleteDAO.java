@@ -20,15 +20,7 @@ public class BuyItemCompleteDAO {
 		ArrayList<CartInfoDTO> cartInfoList = new ArrayList<CartInfoDTO>();
 
 		//cart_info,item_info_transaction内の共通product_idで2つのテーブルを結合
-		String sql = "SELECT iit.item_stock as item_stock,"
-				+"ci.user_id as userId,"
-				+"ci.id as cartId,"
-				+"ci.product_id as product_id,"
-				+"iit.item_name as item_name,"
-				+"iit.image as image,"
-				+"iit.item_price as item_price,"
-				+"ci.product_count as product_count,"
-				+"FROM cart_info as ci LEFT JOIN item_info_transaction as iit ON ci.product_id = iit.product_id WHERE ci.user_id = ?";
+		String sql = "SELECT iit.item_stock as item_stock,ci.user_id as userId,ci.id as cartId,ci.product_id as product_id,iit.item_name as item_name,iit.image as image,iit.item_price as item_price,ci.product_count as product_count FROM cart_info as ci LEFT JOIN item_info_transaction as iit ON ci.product_id = iit.product_id WHERE ci.user_id = ?";
 		try{
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, userId);
@@ -37,9 +29,24 @@ public class BuyItemCompleteDAO {
 			while(rs.next()){
 				CartInfoDTO dto = new CartInfoDTO();
 				// iitテーブル
-				dto
-			}
+				dto.setProductName(rs.getString("item_name"));
+				dto.setImage(rs.getString("image"));
+				dto.setStock(rs.getInt("item_stock"));
+				dto.setPrice(rs.getInt("item_price"));
+				// ciテーブル
+				dto.setUserId(rs.getString("userId"));
+				dto.setProductId(rs.getInt("product_id"));
+				dto.setProductCount(rs.getInt("product_count"));
+
+				cartInfoList.add(dto);
+				}
+			}catch(SQLException e){
+				e.printStackTrace();
+		}finally{
+			connection.close();
 		}
+
+		return cartInfoList;
 	}
 
 	public int setPurchseHistory(List<CartInfoDTO> cartList) throws SQLException {
@@ -79,30 +86,33 @@ public class BuyItemCompleteDAO {
 	// * @param pay
 	// * @throws SQLException
 	// */
-	public void buyItemInfo(int item_transaction_id, String user_master_id, int total_price, int total_count,
-			String pay, int item_stock) throws SQLException {
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setInt(1, item_transaction_id);
-			preparedStatement.setInt(2, total_price);
-			preparedStatement.setInt(3, total_count);
-			preparedStatement.setString(4, user_master_id);
-			preparedStatement.setString(5, pay);
-			preparedStatement.setString(6, dateUtil.getDate());
+	public int updateProductCount(List<CartInfoDTO> cartList) throws SQLException {
 
-			int checkCount = preparedStatement.executeUpdate();
-			if (checkCount > 0) {
-				String sql2 = "UPDATE item_info_transaction SET item_stock = ? WHERE id = ?";
-				PreparedStatement ps = connection.prepareStatement(sql2);
-				ps.setInt(1, item_stock);
-				ps.setInt(2, item_transaction_id);
-				ps.executeUpdate();
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+
+		int ret = 0;
+		String sql ="UPDATE item_info_transaction set item_stock = ?, update_date = now() WHERE product_id = ?";
+
+		try {
+
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+			for(CartInfoDTO item : cartList){
+
+			preparedStatement.setInt(1, item.getStock() - item.getProductCount());
+			preparedStatement.setInt(2, item.getProductId());
+
+			ret += preparedStatement.executeUpdate();
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			connection.close();
 		}
+		return ret;
 	}
+
 
 }

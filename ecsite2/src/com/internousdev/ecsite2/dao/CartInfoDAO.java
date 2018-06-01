@@ -15,14 +15,14 @@ public class CartInfoDAO {
 	private Connection con = null;
 
 	//ユーザーのカートに商品を追加する
-	public int insertUserCart(String userId, int product_id, int productCount, int price) throws SQLException{
+	public int insertUserCart(String userId, int productId, int productCount, int price) throws SQLException{
 		String sql = "INSERT INTO cart_info(user_id, product_id, product_count, price, insert_date) VALUES(?,?,?,?,NOW())";
 		int count = 0;
 		try{
 			con = dbConnector.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
-			ps.setInt(2, product_id);
+			ps.setInt(2, productId);
 			ps.setInt(3, productCount);
 			ps.setInt(4, price);
 			count = ps.executeUpdate();
@@ -74,5 +74,57 @@ public class CartInfoDAO {
 		}
 		return cartList;
 	}
+
+	public int updateCartProductCount(String userId, int productId, int productCount) throws SQLException{
+		String sql = "UPDATE cart_info SET product_count = product_count + ? WHERE user_id = ? AND product_id = ?";
+		int count = 0;
+		try{
+			con = dbConnector.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, productCount);
+			ps.setString(2, userId);
+			ps.setInt(3, productId);
+			count = ps.executeUpdate();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			con.close();
+		}
+		return count;
+	}
+
+
+
+	public boolean sameProductExists(String userId, int productId) throws SQLException{
+		boolean result = false;
+		String checkExist = null;
+
+		DBConnector dbConnector = new DBConnector();
+		Connection con = dbConnector.getConnection();
+
+		String sql = "select user_id from cart_info where user_id = ? AND product_id = ?";
+		try{
+			con = dbConnector.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setInt(2, productId);
+			ResultSet resultSet = ps.executeQuery();
+
+			while(resultSet.next()){
+				checkExist = resultSet.getString("user_id");
+			}
+			if(checkExist != null){
+				result = true;
+			}
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			con.close();
+		}
+		return result;
+	}
+
 }
 

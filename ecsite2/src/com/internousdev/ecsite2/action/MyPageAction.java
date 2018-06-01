@@ -51,7 +51,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			if(buyItemDTOList != null) {
 			for(int i=0; i<buyItemDTOList.size(); i++){
 
-			String user_master_id = session.get("login_user_id").toString();
+			String user_master_id = session.get("userId").toString();
 
 			MyPageDAO myPageDAO = new MyPageDAO();
 
@@ -61,7 +61,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			}
 
 		}else{
-			String user_master_id = session.get("login_user_id").toString();
+			String user_master_id = session.get("userId").toString();
 			MyPageDAO myPageDAO = new MyPageDAO();
 			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
 			session.put("myPageList", myPageList);
@@ -93,7 +93,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 */
 	public void delete() throws SQLException{
 
-		String user_master_id = session.get("login_user_id").toString();
+		String user_master_id = session.get("userId").toString();
 
 		MyPageDAO myPageDAO = new MyPageDAO();
 		int res = myPageDAO.buyItemHistoryDelete(user_master_id);
