@@ -53,10 +53,10 @@ li a:hover{
 	<div id="header">
 		<ul>
 			<li><a href='<s:url action="GoHomeAction" />'>HOME</a></li>
-			<li><a href='<s:url action="CartAction" />'>CART</a></li>
 			<li><a href='<s:url action="ProductListPageAction" />'>PRODUCT LIST</a></li>
 			<li><a href='<s:url action="InquiryAction" />'>INQUIRY</a></li>
 			<s:if test="#session.loginFlg">
+				<li><a href='<s:url action="CartAction" />'>CART</a></li>
 				<li><a href='<s:url action="MyPageAction" />'>MY PAGE</a></li>
 				<li><a href='<s:url action="LogoutAction" />'>LOGOUT</a></li>
 			</s:if>

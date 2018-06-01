@@ -33,7 +33,7 @@
 							<option value="5">5</option>
 						</select>
 
-						<s:hidden name="product_id" value="%{product_id}" />
+						<s:hidden name="productId" value="%{product_id}" />
 
 						<s:submit class="button" value="カートに入れる" />
 					</s:if>

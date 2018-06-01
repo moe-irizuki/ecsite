@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite2.dao.CartInfoDAO;
 import com.internousdev.ecsite2.dto.CartInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -24,13 +25,15 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware 
 
 	public  String execute() throws SQLException{
 		String result = ERROR;
-		String userId;
+		String userId = null;
+	//ログイン判定
 	if((boolean)session.get("loginFlg")) {
 		userId = session.get("userId").toString();
 	}
 
-//	CartInfoDAO cartInfoDAO = new CartInfoDAO();
-//	cartList = cartInfoDAO.getUserCartList(userId);
+	//カート情報取得
+	CartInfoDAO cartInfoDAO = new CartInfoDAO();
+	cartList = cartInfoDAO.getUserCartList(userId);
 
 	for(CartInfoDTO dto:cartList) {
 		totalPrice += dto.getPrice();

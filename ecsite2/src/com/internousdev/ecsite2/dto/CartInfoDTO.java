@@ -6,7 +6,6 @@ public class CartInfoDTO {
 
 	private int cartId;
 	private String userId;
-	private String tempUserId;
 	private int productId;
 	private int productCount;
 	private String productName;
@@ -32,14 +31,6 @@ public class CartInfoDTO {
 
 	public void setUserId(String userId){
 		this.userId = userId;
-	}
-
-	public String getTempUserId(){
-		return tempUserId;
-	}
-
-	public void setTempUserId(String tempUserId){
-		this.tempUserId = tempUserId;
 	}
 
 	public int getProductId(){
